@@ -1,9 +1,71 @@
-{% include 'header.html' %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Amaranth' rel='stylesheet' type='text/css'>
+    <title>{{ title|upper }} | DEV2TECH S.A.</title>
 
-{% block 'content' %}
+    {% block styles %}
+    {% endblock %}
+</head>
+<body>
+	<header>
+		<nav class="responsive-nav-menu">
+			<!--
+			<ul class="responsive-nav-menu-ul">
+				<li class="">
+					<a href="#{{ instance.hashtag }}">jienbrvkjnb er</a>
+				</li>
+				<li class="">
+					<a href="#{{ instance.hashtag }}"> gfrb rtb</a>
+				</li>
+				<li class="">
+					<a href="#{{ instance.hashtag }}">541864874</a>
+				</li>
+				<li class="">
+					<a href="#{{ instance.hashtag }}">458484864894</a>
+				</li>
+				<li class="">
+					<a href="#{{ instance.hashtag }}">xwefecfergewtghbtree</a>
+				</li>
+			</ul> -->
+		</nav>
+	</header>
 
-{% endblock %}
+    <section>
+        {% block content %}
 
-{% include 'footer.html' %}
+        {% endblock %}
+    </section>
 
+    <footer class="myFooter">
+        <!--
+        <div class="">
+            <ul class="">
+                <li class="">test</li>
+            </ul>
+        </div>
+        <div class="">
+            <ul class="">
+                <li class="">test</li>
+            </ul>
+        </div>
+        <div class="">
+            <ul class="">
+                <li class="">test</li>
+            </ul>
+        </div>
+        <div class="">
+            <ul class="">
+                <li class="">test</li>
+            </ul>
+        </div>
+        -->
+    </footer>
+    {% block js %}
 
+    {% endblock %}
+</body>
