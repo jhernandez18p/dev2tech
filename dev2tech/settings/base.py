@@ -1,8 +1,9 @@
 import os
+from decouple import config
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = 'yerfqh$6832aepslx4fcdl*b_325ffy(f5i5k3%u@!fo!1)s5p'
+SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = True
 
@@ -77,8 +78,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'UTC'
+LANGUAGE_CODE = 'es-us'
+TIME_ZONE = 'America/Panama'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
