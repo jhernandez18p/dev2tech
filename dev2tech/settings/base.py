@@ -79,7 +79,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 LANGUAGE_CODE = 'es-us'
-TIME_ZONE = 'America/Panama'
+# TIME_ZONE = 'America/Panama'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
@@ -87,15 +87,15 @@ USE_TZ = True
 """ Storages Conf           """
 
 # DEFAULT_FILE_STORAGE = 'storages.backends.ftp.FTPStorage'
-# FTP_STORAGE_LOCATION = config("ASESALUD_FTP_STORAGE_LOCATION",)
+# FTP_STORAGE_LOCATION = config("DEV2TECH_FTP_STORAGE_LOCATION",)
 
 """ Email Conf.             """
-#
-# EMAIL_HOST = config("ASESALUD_EMAIL_HOST",)
-# EMAIL_PORT = config("ASESALUD_EMAIL_PORT", cast=int)
-# EMAIL_HOST_USER = config("ASESALUD_EMAIL_HOST_USER",)
-# EMAIL_HOST_PASSWORD = config("ASESALUD_EMAIL_HOST_PASSWORD",)
-# EMAIL_USE_TLS = config("ASESALUD_EMAIL_USE_TLS", cast=bool)
+
+EMAIL_HOST = config("DEV2TECH_EMAIL_HOST",)
+EMAIL_PORT = config("DEV2TECH_EMAIL_PORT", cast=int)
+EMAIL_HOST_USER = config("DEV2TECH_EMAIL_HOST_USER",)
+EMAIL_HOST_PASSWORD = config("DEV2TECH_EMAIL_HOST_PASSWORD",)
+EMAIL_USE_TLS = config("DEV2TECH_EMAIL_USE_TLS", cast=bool)
 
 """ Security Conf           """
 
