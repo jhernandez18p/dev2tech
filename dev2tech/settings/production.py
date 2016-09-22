@@ -5,7 +5,7 @@ SECRET_KEY = config('DEV2TECH_SECRET_KEY')
 
 DEBUG = config('DEV2TECH_DEBUG',default=False, cast=bool)
 
-ALLOWED_HOSTS = ['intra.phoenixworldtrade.com']
+ALLOWED_HOSTS = ['.dev2tech.xyz']
 
 # AUTH_USER_MODEL = 'intra_profile.User'
 
