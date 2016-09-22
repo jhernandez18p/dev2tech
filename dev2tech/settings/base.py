@@ -3,7 +3,7 @@ from decouple import config
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = config('DEV2TECH_SECRET_KEY')
 
 DEBUG = True
 
@@ -19,7 +19,8 @@ DJANGO_APPS = [
 ]
 
 LOCAL_APPS = [
-    # '',
+    'local_apps.frontend',
+    'local_apps.profiles',
 ]
 
 THIRD_PARTY_APPS = []
@@ -102,7 +103,7 @@ EMAIL_USE_TLS = config("DEV2TECH_EMAIL_USE_TLS", cast=bool)
 # AUTH_USER_MODEL = 'local_apps.intra_profile.User'
 AUTHENTICATION_BACKENDS =(
                             'django.contrib.auth.backends.ModelBackend',
-                            # 'local_apps.profiles.EmailBackend.EmailBackend',
+                            'local_apps.profiles.EmailBackend.EmailBackend',
                         )
 LOGIN_URL = '/entrar/'
 LOGIN_REDIRECT_URL = '/'
