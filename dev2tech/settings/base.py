@@ -100,7 +100,6 @@ EMAIL_USE_TLS = config("DEV2TECH_EMAIL_USE_TLS", cast=bool)
 
 """ Security Conf           """
 
-# AUTH_USER_MODEL = 'local_apps.intra_profile.User'
 AUTHENTICATION_BACKENDS =(
                             'django.contrib.auth.backends.ModelBackend',
                             'local_apps.profiles.EmailBackend.EmailBackend',

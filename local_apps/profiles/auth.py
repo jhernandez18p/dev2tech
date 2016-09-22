@@ -66,8 +66,8 @@ def register(request):
 				'error':{
 					'title':'Nombre de usuario requerido!',
 					'error':'show',
-					'email':'El campo de correo no puede estar vacio, recuerde que debe terminar en "@phoenixwt.com.pa"',
-					'contacto':'Por favor contactar al administrador de sistemas, soporte@phoenixwt.com.pa'
+					'email':'El campo de correo no puede estar vacio, recuerde que debe terminar en "@dev2tech.xyz"',
+					'contacto':'Por favor contactar al administrador de sistemas, soporte@dev2tech.xyz'
 				}
 			})
 		if email == '':
@@ -76,18 +76,18 @@ def register(request):
 				'error':{
 					'title':'Email requerido!',
 					'error':'show',
-					'email':'El campo de correo no puede estar vacio, recuerde que debe terminar en "@phoenixwt.com.pa"',
-					'contacto':'Por favor contactar al administrador de sistemas, soporte@phoenixwt.com.pa'
+					'email':'El campo de correo no puede estar vacio, recuerde que debe terminar en "@dev2tech.xyz"',
+					'contacto':'Por favor contactar al administrador de sistemas, soporte@dev2tech.xyz'
 				}
 			})
-		if not email.endswith('@phoenixwt.com.pa'):
+		if not email.endswith('@dev2tech.xyz'):
 			return render(request, 'auth/register.html',{
 				'title':'Error de Registro',
 				'error':{
 					'title':'Email debe ser corporativo',
 					'error':'show',
-					'email':'Su correo "%s" en invalido, debe terminar en "@phoenixwt.com.pa"' % email,
-					'contacto':'Por favor contactar al administrador de sistemas, soporte@phoenixwt.com.pa'
+					'email':'Su correo "%s" en invalido, debe terminar en "@dev2tech.xyz"' % email,
+					'contacto':'Por favor contactar al administrador de sistemas, soporte@dev2tech.xyz'
 				}
 			})
 
@@ -98,7 +98,7 @@ def register(request):
 					'title':'Contraseña inconsistente',
 					'error':'show',
 					'email':'Error "%s" no es igual a "%s"' % (password1,password2),
-					'contacto':'Por favor contactar al administrador de sistemas, soporte@phoenixwt.com.pa',
+					'contacto':'Por favor contactar al administrador de sistemas, soporte@dev2tech.xyz',
 					'input':'has-error',
 				}
 			})
@@ -111,8 +111,8 @@ def register(request):
 		send_mail(
 		            'Registro de usuario',
 		            '%s, %s' % (username,email) ,
-		            config("INTRA_EMAIL_HOST_USER",),
-		            [config("INTRA_EMAIL_HOST_USER",)],
+		            config("DEV2TECH_EMAIL_HOST_USER",),
+		            [config("DEV2TECH_EMAIL_HOST_USER",)],
 		            fail_silently=False,
 		        )
 
