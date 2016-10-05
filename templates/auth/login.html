@@ -2,7 +2,7 @@
 
 {% block auth %}
 
-<form class="form-horizontal" role="form" method="post" >
+<form class="form-horizontal" role="form" method="post" action="{% url 'Login' %}">
 
 	<div class="row column log-in-form">
 		<h4 class="text-center">Log in with you email account</h4>
@@ -17,9 +17,10 @@
 		</label>
 		<input id="show-password" type="checkbox"><label for="show-password">Show password</label>
 
-		<p><a type="submit" class="button expanded">Log In</a></p>
+		<button type="submit" class="button expanded">Log In</button>
+
         <p class="text-center"><a href="#">Forgot your password?</a></p>
-		<!-- <p class="text-center">¿Aún no está registrado? <a href="{% url 'Register' %}">Regístrese</a></p> -->
+		<p class="text-center">¿Aún no está registrado? <a href="{% url 'Register' %}">Regístrese</a></p>
 
 	</div>
 

@@ -7,7 +7,9 @@ from django.contrib.auth.decorators import user_passes_test
 def login(request):
 
 	if request.method == 'GET':
+
 		return render(request, 'auth/login.html',{'title':'Iniciar Sesión'})
+
 	elif request.method == 'POST':
 
 		username = request.POST['username']
@@ -32,9 +34,9 @@ def login(request):
 					})
 		else:
 			return render(request, 'auth/login.html',{
-					'warning': 'Usuario o contraseña erronea',
-					'title':'Iniciar Sesión',
-				})
+							'warning': 'Usuario o contraseña erronea',
+							'title':'Iniciar Sesión',
+							})
 
 def logout(request):
 
