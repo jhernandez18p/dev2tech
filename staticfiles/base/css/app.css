@@ -1,13 +1,61 @@
-.no-js .top-bar {
-  display: none;
+{% load staticfiles %}
+/*
+    Colores
+        Azul oscuro    :#014d8c;
+        Azul claro     :#3ea5ce;
+*/
+
+.jumbotron
+{
+    background-color: #3ea5ce; /* Orange */
+    color: #ffffff;
+    height: 98vh;
+    margin-bottom: 0;
+}
+.index-full-image
+{
+    background: url("{% static 'base/images/DEV2TECH.jpg' %}");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-@media screen and (min-width: 40em) {
-  .no-js .top-bar {
-    display: block;
-  }
+.navbar
+{
+    margin-bottom: 0;
+    background-color: #014d8c;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 3px;
+    border-radius: 0;
+}
+.logo-font
+{
+    font-family: 'Sarina', cursive;
+    font-size: 32px;
+}
+.navbar-brand
+{
+}
+.navbar li a, .navbar .navbar-brand
+{
+    color: #fff !important;
+}
 
-  .no-js .title-bar {
-    display: none;
-  }
+.hire-us
+{
+    background-color: #559565
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a
+{
+    color: #fff !important;
+    background-color: #014d8c !important;
+}
+
+.navbar-default .navbar-toggle
+{
+    border-color: transparent;
+    color: #fff !important;
 }

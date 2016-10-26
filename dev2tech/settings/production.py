@@ -9,6 +9,14 @@ ALLOWED_HOSTS = ['.dev2tech.xyz']
 
 # AUTH_USER_MODEL = 'intra_profile.User'
 
+STATIC_URL = 'https://%s/' % config('AWS_BUCKET_URL')
+
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorages'
+
+AWS_STORAGE_BUCKET_NAME = config('AWS_BUCKET_NAME')
+AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
+
 DATABASES ={
             'default':{
                 'ENGINE': 'django.db.backends.postgresql',
