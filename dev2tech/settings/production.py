@@ -11,7 +11,7 @@ ALLOWED_HOSTS = ['.dev2tech.xyz']
 
 STATIC_URL = 'https://%s/' % config('AWS_BUCKET_URL')
 
-STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorages'
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage' 
 
 AWS_STORAGE_BUCKET_NAME = config('AWS_BUCKET_NAME')
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
