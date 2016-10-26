@@ -7,7 +7,7 @@ SECRET_KEY = config('DEV2TECH_SECRET_KEY')
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['']
 
 DJANGO_APPS = [
     'django.contrib.admin',
@@ -16,6 +16,7 @@ DJANGO_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
 ]
 
 LOCAL_APPS = [
