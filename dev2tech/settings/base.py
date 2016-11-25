@@ -109,7 +109,7 @@ AUTHENTICATION_BACKENDS =(
                         )
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = 'https://dev2tech.com/'
+LOGOUT_REDIRECT_URL = 'https://dev2tech.xyz/'
 SESSION_COOKIE_AGE = 43200
 SESSION_COOKIE_NAME = 'session'
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
