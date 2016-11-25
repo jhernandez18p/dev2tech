@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block css %}
+{% endblock %}
+
+{% block content %}
+<div class="row gray vh50">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container-fluid">
+        <div class="col-xs-12">
+            <h2 class="text-center text-onlysection">
+                Conócenos <br><b class="typed-text"></b>
+            </h2>
+        </div>
+    </div>
+</div>
+
+<div class="row gray">
+    <div class="container padding-50px">
+        {% for info in info_sections %}
+            <div class="col-xs-12 col-sm-6">
+                <div class="panel panel-card panel-default">
+                    <div class="panel-body">
+                        <h2 class="text-{{ info.css_classes }}" >{{ info.title }}</h2>
+                        <p>{{ info.content }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="row flex-row blue">
+    <div class="container padding-50px">
+        <div class="col-xs-12">
+            <h2 class="text-center text-white">Nuestros valores</h2>
+            <br>
+        </div>
+        {% for values in value_sections %}
+        <div class="col-xs-12 col-sm-6 col-mg-3 col-xl-3">
+            <div class="panel panel-card panel-default flex-col">
+                <div class="panel-body">
+                    <h2 class="text-center" >{{ values.title }}</h2>
+                    <p class="text-center">
+                        <img src="{{ values.image.url }}" alt="{{ values.content }}" width="200"/>
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% include 'frontend/contact-us.html' %}
+<div class="row turquesa padding-50px">
+    <div class="container">
+        <div class="col-xs-12">
+            <h2 class="text-center text-white">Preguntas frecuentes</h2>
+            <br>
+        </div>
+        <div class="col-xs-12">
+            <div class="panel-group" id="accordion">
+                {% for faq in faqs %}
+                <div class="panel panel-default panel-card">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{faq.id}}">{{faq.question}}</a>
+                        </h4>
+                    </div>
+                    <div id="collapse{{faq.id}}" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            {{faq.answers}}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+{% block js %}
+<script type="text/javascript">
+$(document).ready(function($){
+    $(function(){
+      $(".typed-text").typed({
+        strings: [
+            '"Somos innovación"',
+            '"Somos desarrollo web"',
+            '"Somos marketing"',
+            '"Somos el enlace entre la nube y sus servicios"',
+            '"Somos expertos en lo que hacemos"',
+        ],
+        loop: true,
+        cursorChar: "|",
+        typeSpeed: 30,
+        backSpeed: 15,
+        backDelay: 2500
+      });
+    });
+});
+</script>
+<script src="{% static 'base/js/typed.min.js' %}" charset="utf-8"></script>
+
+{% endblock %}

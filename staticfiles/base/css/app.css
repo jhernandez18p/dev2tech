@@ -1,61 +1,217 @@
 {% load staticfiles %}
-/*
-    Colores
-        Azul oscuro    :#014d8c;
-        Azul claro     :#3ea5ce;
-*/
+@import url(http://fonts.googleapis.com/css?family=Vollkorn|Roboto);
 
-.jumbotron
-{
-    background-color: #3ea5ce; /* Orange */
-    color: #ffffff;
-    height: 98vh;
-    margin-bottom: 0;
-}
-.index-full-image
-{
-    background: url("{% static 'base/images/DEV2TECH.jpg' %}");
-    background-size: cover;
-    background-repeat: no-repeat;
+*{
+    font-family: 'Droid Sans', sans-serif;
+    font-size: 18px;
 }
 
-.navbar
-{
-    margin-bottom: 0;
-    background-color: #014d8c;
-    z-index: 9999;
-    border: 0;
-    font-size: 12px !important;
-    line-height: 1.42857143 !important;
-    letter-spacing: 3px;
-    border-radius: 0;
+html, body {
+    background: #F5F5F5;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
 }
+
+textarea
+{
+    resize: none;
+}
+
+h1
+{
+    position: relative;
+    text-align: center;
+    font-family: 'Vollkorn', sans-serif;
+}
+
+section
+{
+    overflow: hidden;
+}
+
+.form-control
+{
+    border-radius: 0px;
+    border-left: 5px solid rgba(0, 0, 0, 0.48)
+}
+
+.form-control:active, .form-control:focus
+{
+    z-index: 2;
+    border-left: 3px solid rgba(0, 0, 0, 0.48)
+    box-shadow: rgba(0, 0, 0, 0.117647) 0px 0px 8px 0px, rgba(0, 0, 0, 0.239216) 0px 8px 8px 0px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.117647) 0px 0px 8px 0px, rgba(0, 0, 0, 0.239216) 0px 8px 8px 0px;
+}
+
+.form-control:focus
+{
+    border-color: rgba(0, 0, 0, 0.5);
+    outline: 0;
+}
+
+.modal-content
+{
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #999;
+    border: 1px solid rgba(0,0,0,.2);
+     border-radius: 0px;
+    outline: 0;
+    -webkit-box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    box-shadow: 0 3px 9px rgba(0,0,0,.5);
+}
+
+.text-onlysection
+{
+    font-size: 3.5em;
+}
+
+.typed-text, .typed-cursor
+{
+    font-size: 0.99em;
+}
+
+.typed-cursor
+{
+    color : rgb(255,255,255);
+}
+
+.text-white
+{
+    color: #FFF;
+}
+
+.vertical-align-center
+{
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.btn
+{
+    border-radius: 0px;
+}
+
+.panel
+{
+    margin-bottom: 35px;
+    /* background-color: #fff; */
+    border: 1px solid transparent;
+    border-radius: 0px;
+    -webkit-box-shadow: 5px 5px 5px rgba(3,3,3,.03);
+    box-shadow: 5px 5px 5px rgba(3,3,3,.03);
+}
+
+.panel-card:hover
+{
+    z-index: 2;
+    box-shadow: rgba(0, 0, 0, 0.117647) 0px 0px 8px 0px, rgba(0, 0, 0, 0.239216) 0px 8px 8px 0px;
+}
+
 .logo-font
 {
     font-family: 'Sarina', cursive;
-    font-size: 32px;
-}
-.navbar-brand
-{
-}
-.navbar li a, .navbar .navbar-brand
-{
-    color: #fff !important;
 }
 
-.hire-us
+.left
 {
-    background-color: #559565
+    /*box-shadow: 5px 5px 11px rgba(0, 0, 0, 0.18);*/
+    border: 1px solid #FFF;
+    margin: 35px 10px 0px 40px;
+    z-index: 99999;
 }
 
-.navbar-nav li a:hover, .navbar-nav li.active a
+.right
 {
-    color: #fff !important;
-    background-color: #014d8c !important;
+    /*box-shadow: -5px 5px 11px rgba(0, 0, 0, 0.18);*/
+    border: 1px solid #FFF;
+    margin: 35px 35px 0px 10px;
+    z-index: 99999;
 }
 
-.navbar-default .navbar-toggle
+.two-collumn
 {
-    border-color: transparent;
-    color: #fff !important;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    height: 120vh;
+}
+
+.two-collumn > .left, .two-collumn > .right
+{
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    width: 46vw;
+}
+
+.padding-15px
+{
+    padding: 15px 0;
+}
+
+.footer-nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.footer-nav > li {
+    float: left;
+}
+
+.footer-nav > li > a {
+    display: inline-block;
+    color:#FFF;
+    margin-left: 5px;
+    font-size: .65em;
+    text-align: right;
+    text-decoration: none;
+}
+
+.footer-nav > li > a::before
+{
+    content:"/";
+    color:#FFF;
+    margin-right:5px;
+    margin-left:0px;
+}
+
+.full-screen
+{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.image-services
+{
+    width: 200px;
+}
+
+.lema-row
+{
+    min-height: 30vh;
+}
+
+.text-middle
+{
+    margin: 5% auto;
+}
+
+.text-lema
+{
+    font-size: 3em;
+    color:#FFF;
+}
+
+.hyper-text
+{
+    font-size: 2.3em;
+    color: rgba(0, 0, 0, 0.75);
 }

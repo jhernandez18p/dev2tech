@@ -1,0 +1,89 @@
+@media screen and (max-width: 1024px) {
+    .two-collumn > .left, .two-collumn > .right
+    {
+        display: flex;
+        flex-direction: column;
+        height: 60vh;
+        width: 45vw;
+    }
+    .index-full-screen-text-box > h2
+    {
+        font-size: 2.5em;
+    }
+
+    .index-full-screen-text-box > h2> .typed-text, .hyper-text,
+    .typed-text, .typed-cursor
+    {
+        font-size: 2.48em;
+    }
+}
+
+@media screen and (max-width: 818px) {
+    .two-collumn
+    {
+        height: 220vh;
+    }
+
+    .logo_container > .logo
+    {
+        font-size: 1.6em;
+    }
+
+    .logo_container
+    {
+        left: 30px;
+    }
+
+    .button_container
+    {
+        right: 30px;
+    }
+
+    .overlay ul li a
+    {
+        font-size: 1.6em;
+    }
+
+    .left
+    {
+        /*box-shadow: 5px 5px 11px rgba(0, 0, 0, 0.18);*/
+        border: 1px solid #FFF;
+        margin: 35px 10px 0px 40px;
+        z-index: 99999;
+    }
+
+    .right
+    {
+        /*box-shadow: -5px 5px 11px rgba(0, 0, 0, 0.18);*/
+        border: 1px solid #FFF;
+        margin: 35px 35px 0px 10px;
+        z-index: 99999;
+    }
+
+    .two-collumn > .left, .two-collumn > .right
+    {
+        display: flex;
+        flex-direction: row;
+        width: 90vw;
+    }
+    .index-full-screen-text-box
+    {
+        top:55%;
+    }
+    .index-full-screen-text-box > h2
+    {
+        font-size: 2em;
+    }
+
+    .index-full-screen-text-box > h2> .typed-text, .hyper-text,
+    .typed-text, .typed-cursor
+    {
+        font-size: .98em;
+    }
+
+    .text-lema
+    {
+        font-size: 2em;
+        margin: 15% auto;
+    }
+}

@@ -6,6 +6,9 @@
     <title>DEV2TECH | {{title|upper}} </title>
     <meta name="Title" content="{{title}}">
     <meta name="Keywords" content="Web, web development,Cloud Services, cloud, dev, TECH, desarrollo, software ">
+    <link rel="stylesheet" href="{% static 'base/css/menu.css' %}" media="screen" title="no title">
+    <link rel="stylesheet" href="{% static 'base/css/master.css' %}" media="screen" title="no title">
+
     {% include 'header.html' %}
 
     {% block css %}
@@ -13,46 +16,109 @@
 
 </head>
 <body>
-    {% block full-vh-imagen %}
-    {% endblock %}
     <header>
-        <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand logo-font" href="#">Dev2tech</a>
-                </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#about">NOSOTROS</a></li>
-                        <li><a href="#services">SERVICIOS</a></li>
-                        <li><a href="#portfolio">PORTFOLIO</a></li>
-                        <li class="hire-us"><a href="#contact">CONTACTO</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+
+        <div class="logo_container">
+            <span id="dev2tech-logo" class="logo logo-font">Dev2tech</span>
+        </div>
+
+        <div class="button_container" id="toggle">
+            <span class="top"></span>
+            <span class="middle"></span>
+            <span class="bottom"></span>
+        </div>
+
+        <div class="overlay" id="overlay">
+            <nav class="overlay-menu">
+                <ul>
+                    {% if page_title != 'Home' %}
+                        <li>
+                            <a href="{% url 'Home' %}">Inicio</a>
+                        </li>
+                    {% endif %}
+                    {% if page_title != 'about' %}
+                        <li>
+                            <a href="{% url 'about' %}">Conócenos</a>
+                        </li>
+                    {% endif %}
+                    {% if page_title != 'services' %}
+                        <li>
+                            <a href="{% url 'services' %}">¿Qué hacemos?</a>
+                        </li>
+                    {% endif %}
+                    {% if page_title != 'done' %}
+                        <li>
+                            <a href="{% url 'done' %}">¡Lo que hemos hecho!</a>
+                        </li>
+                    {% endif %}
+                    {% if page_title != 'team' %}
+                        <li>
+                            <a href="{% url 'team' %}">Dev2team</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+
     </header>
+
     <section>
         {% block content %}
         {% endblock %}
     </section>
-    <footer class="container-fluid text-center">
-        <a href="#myPage" title="To Top">
-            <span class="glyphicon glyphicon-chevron-up"></span>
-        </a>
-        <p>
-            <b class="logo-font">Dev2tech S.A.</b>
-        </p>
+
+    <footer class="container-fluid gray">
+
+        <div class="row darkGray">
+            <div class="container-fluid">
+                <div class="col-xs-12 col-sm-6 padding-15px text-center">
+                    <p class="text-white">
+                        Copyright &reg; {% now "Y" %} <img src="/media/logo.png" class="image-responsive" alt="" height="18" style="vertical-align:top;">
+                    </p>
+                </div>
+                <div class="col-xs-12 col-sm-6 padding-15px">
+                    <ul class="footer-nav">
+                        {% if page_title != 'Home' %}
+                            <li>
+                                <a href="{% url 'Home' %}">Inicio</a>
+                            </li>
+                        {% endif %}
+                        {% if page_title != 'about' %}
+                            <li>
+                                <a href="{% url 'about' %}">Conócenos</a>
+                            </li>
+                        {% endif %}
+                        {% if page_title != 'services' %}
+                            <li>
+                                <a href="{% url 'services' %}">¿Qué hacemos?</a>
+                            </li>
+                        {% endif %}
+                        {% if page_title != 'done' %}
+                            <li>
+                                <a href="{% url 'done' %}">¡Lo que hemos hecho!</a>
+                            </li>
+                        {% endif %}
+                        {% if page_title != 'team' %}
+                            <li>
+                                <a href="{% url 'team' %}">Dev2team</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
     </footer>
+
     <script src="{% static 'base/js/vendor/jquery.js' %}" charset="utf-8"></script>
     <script src="{% static 'base/js/bootstrap.min.js' %}" charset="utf-8"></script>
     <script src="{% static 'base/js/app.js' %}" charset="utf-8"></script>
+    <script src="{% static 'base/js/sh.js' %}" charset="utf-8"></script>
+    <script type="text/javascript">
+        $('.panel').matchHeight();
+    </script>
     {% block js %}
+
     {% endblock %}
 </body>
 </html>

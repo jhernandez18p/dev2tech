@@ -7,7 +7,7 @@ box-sizing: border-box;
 }
 body {
     font-family: Arial;
-    background-color: rgba(6, 6, 6, 0.23);
+    background-color: #2980b9;
     padding: 50px 0;
 }
 .login {
@@ -23,7 +23,7 @@ body {
 }
 .app-title {
     text-align: center;
-    color: #777;
+    color: #EEE;
 }
 
 .login-form {
@@ -85,4 +85,9 @@ input:focus {
 .register a,.register a:hover,.register a:active{
     color: #3498DB;
     text-decoration: none;
+}
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    background-color: rgb(255, 255, 255);
+    background-image: none;
+    color: rgb(0, 0, 0);
 }
