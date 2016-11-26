@@ -18,22 +18,21 @@
 {% endblock %}
 
 {% block content %}
-<!-- <div id="div-full-screen">
-
-</div> -->
-
 <div id="mycarousel" class="carousel slide carousel-fade" data-ride="carousel">
     <div class="carousel-inner" role="listbox">
         <div class="item">
             <img src="media/solid-gray.jpg" data-color="gray" alt="Dev2tech">
         </div>
-        {% for banner in banners %}
-        <div class="item">
-            <img src="{{banner.image.url}}" data-color="{{banner.background_color}}" alt="{{banner.name}}">
-        </div>
-        {% endfor %}
+        {% if banners %}
+            {% for banner in banners %}
+            <div class="item">
+                <img src="{{banner.image.url}}" data-color="{{banner.background_color}}" alt="{{banner.name}}">
+            </div>
+            {% endfor %}
+        {% endif %}
     </div>
 </div>
+
 <div class="index-full-screen-text-box">
     <h2 class="text-background">Bienvenido aquí encontrarás:</h2><b class="typed-text hyper-text"></b>
 </div>

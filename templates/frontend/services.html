@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 
-
 {% block css %}
 <style media="screen">
     .service-img
@@ -28,28 +27,31 @@
     </div>
 </div>
 
+
 <div class="row">
     <div class="container padding-50px">
-        {% for services in services_section %}
-            <div class="col-xs-12 col-sm-8">
-                <div class="panel panel-default panel-card teal">
-                    <div class="panel-body">
-                        <h2 class="">{{ services.title }}</h2>
-                        <p>{{ services.content }}</p>
-                        <p>
-                            <a class="btn btn-default btn-lg pull-left" href="{% url 'services'%} {{services.link }}">
-                                Ver más
-                            </a>
-                        </p>
+        {% if services_section %}
+            {% for services in services_section %}
+                <div class="col-xs-12 col-sm-8">
+                    <div class="panel panel-default panel-card teal">
+                        <div class="panel-body">
+                            <h2 class="">{{ services.title }}</h2>
+                            <p>{{ services.content }}</p>
+                            <p>
+                                <a class="btn btn-default btn-lg pull-left" href="{% url 'services'%} {{services.link }}">
+                                    Ver más
+                                </a>
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xs-12 col-sm-4">
-                <div class="panel panel-default panel-card teal">
-                    <img class="image-responsive service-img" src="{{ services.image.url }}" alt=""></img>
+                <div class="col-xs-12 col-sm-4">
+                    <div class="panel panel-default panel-card teal">
+                        <img class="image-responsive service-img" src="{{ services.image.url }}" alt=""></img>
+                    </div>
                 </div>
-            </div>
-        {% endfor %}
+            {% endfor %}
+        {% endif %}
     </div>
 </div>
 
