@@ -63,4 +63,3 @@ dev2tech/db.sqlite3
 
 media/services/*
 media/technologies/*
-staticfiles/*
