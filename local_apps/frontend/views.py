@@ -75,7 +75,7 @@ def contact(request):
 		            'Email de contacto, página web',
 		            '%s, ha estado visitando la página web. Su email es: %s, nos ha dejado el siguiente mensaje. \n\n\n\n\n "%s"' % (name,email,comments) ,
 		            email,
-		            ['contacto@dev2tech.xyz'],
+		            ['contacto@dev2tech.xyz','jhernandez.18p@dev2tech.xyz'],
 		            fail_silently=False,
 		        )
 
