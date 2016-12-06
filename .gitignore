@@ -60,3 +60,5 @@ dev2tech/db.sqlite3
 *.sqlite3
 dev2tech/db.sqlite3
 *.sqlite3
+
+media/services/*
