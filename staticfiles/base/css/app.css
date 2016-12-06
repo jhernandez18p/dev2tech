@@ -1,5 +1,4 @@
 {% load staticfiles %}
-@import url("https://fonts.googleapis.com/css?family=Vollkorn|Roboto");
 
 *{
     font-family: 'Roboto', sans-serif;
