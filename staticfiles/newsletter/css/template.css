@@ -1121,13 +1121,13 @@ width: 100% !important;
 
 @media only screen and (max-width: 596px)
 {
-table.body table.container .show-for-large 
+table.body table.container .show-for-large
 {
 display: none !important;
 width: 0;
 mso-hide: all;
 overflow: hidden;
-    }
+    } 
 }
 
 body,
