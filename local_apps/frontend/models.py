@@ -65,7 +65,7 @@ class Banners(models.Model):
 
         verbose_name = ('Banner')
         verbose_name_plural = ('Banners')
-        ordering = ['-sub_category']
+        ordering = ['id']
 
 
 class SiteInfo(models.Model):
@@ -87,7 +87,7 @@ class SiteInfo(models.Model):
 
         verbose_name = ('Site info')
         verbose_name_plural = ('Site info')
-        ordering = ['-sub_category']
+        ordering = ['id']
 
 
 class Sections(models.Model):
@@ -115,7 +115,7 @@ class Sections(models.Model):
 
         verbose_name = ('Section')
         verbose_name_plural = ('Sections')
-        ordering = ['-sub_category']
+        ordering = ['id']
 
 
 class FAQ(models.Model):
