@@ -6,13 +6,9 @@
     <title>DEV2TECH | {{title|upper}} </title>
     <meta name="Title" content="{{title}}">
     <meta name="Keywords" content="Web, web development,Cloud Services, cloud, dev, TECH, desarrollo, software ">
-
-
     {% include 'header.html' %}
-
     {% block css %}
     {% endblock %}
-
 </head>
 <body>
     <header>
@@ -31,19 +27,19 @@
             <nav class="overlay-menu">
                 <ul>
                     {% if page_title != 'Home' %}
-                        <li>
-                            <a href="{% url 'Home' %}">Inicio</a>
-                        </li>
+                    <li>
+                        <a href="{% url 'Home' %}">Inicio</a>
+                    </li>
                     {% endif %}
                     {% if page_title != 'about' %}
-                        <li>
-                            <a href="{% url 'about' %}">Conócenos</a>
-                        </li>
+                    <li>
+                        <a href="{% url 'about' %}">Conócenos</a>
+                    </li>
                     {% endif %}
                     {% if page_title != 'services' %}
-                        <li>
-                            <a href="{% url 'services' %}">¿Qué hacemos?</a>
-                        </li>
+                    <li>
+                        <a href="{% url 'services' %}">¿Qué hacemos?</a>
+                    </li>
                     {% endif %}
                 </ul>
             </nav>
@@ -65,19 +61,19 @@
                     <h4 class="footer-h4">Enlaces</h4>
                     <ul class="list">
                         {% if page_title != 'Home' %}
-                            <li>
-                                <a class="footer-list-a" href="{% url 'Home' %}">Inicio</a>
-                            </li>
+                        <li>
+                            <a class="footer-list-a" href="{% url 'Home' %}">Inicio</a>
+                        </li>
                         {% endif %}
                         {% if page_title != 'about' %}
-                            <li>
-                                <a class="footer-list-a" href="{% url 'about' %}">Conócenos</a>
-                            </li>
+                        <li>
+                            <a class="footer-list-a" href="{% url 'about' %}">Conócenos</a>
+                        </li>
                         {% endif %}
                         {% if page_title != 'services' %}
-                            <li>
-                                <a class="footer-list-a" href="{% url 'services' %}">¿Qué hacemos?</a>
-                            </li>
+                        <li>
+                            <a class="footer-list-a" href="{% url 'services' %}">¿Qué hacemos?</a>
+                        </li>
                         {% endif %}
                     </ul>
                 </div>
@@ -105,11 +101,6 @@
                                 Marketing
                             </a>
                         </li>
-                        <!-- <li>
-                            <a class="footer-list-a" href="{% url 'services' %}storytelling">
-                                storytelling
-                            </a>
-                        </li> -->
                     </ul>
                 </div>
 
