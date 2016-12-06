@@ -69,6 +69,6 @@ class SectionsAdmin(admin.ModelAdmin):
 class FAQAdmin(admin.ModelAdmin):
     """ Panel Admin, fields to site info """
 
-    fields = ('question','sub_category','answers','created',)
+    fields = ('question','sub_category','answers',)
     search_fields = ['question','sub_category']
-    list_display = ('question','sub_category','answers','created',)
+    list_display = ('question','sub_category','answers',)
