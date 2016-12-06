@@ -48,7 +48,7 @@ line-height: 100% !important;
 .logo-font
 {
 font-family: 'Sarina', cursive;
-
+text-align: center;
 }
 
 img
@@ -1127,7 +1127,7 @@ display: none !important;
 width: 0;
 mso-hide: all;
 overflow: hidden;
-    } 
+    }
 }
 
 body,
