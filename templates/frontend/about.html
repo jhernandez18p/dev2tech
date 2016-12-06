@@ -2,6 +2,7 @@
 {% load staticfiles %}
 
 {% block css %}
+
 {% endblock %}
 
 {% block content %}
@@ -96,7 +97,7 @@
 
 {% block js %}
 <script type="text/javascript">
-$(document).ready(function($){
+
     $(function(){
       $(".typed-text").typed({
         strings: [
@@ -113,8 +114,7 @@ $(document).ready(function($){
         backDelay: 2500
       });
     });
-});
+
 </script>
-<script src="{% static 'base/js/typed.min.js' %}" charset="utf-8"></script>
 
 {% endblock %}

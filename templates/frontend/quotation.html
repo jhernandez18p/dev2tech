@@ -1,0 +1,58 @@
+<div class="row panel-card">
+    <div class="container  padding-50px">
+
+        <div class="col-xs-12">
+            <h2 class="text-center">Cotiza nuestros servicios</h2>
+        </div>
+        <br><br>
+        <br><br>
+        <div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8 container">
+            <div class="panel gray ">
+                <form clas="" action="" method="post">
+                    <div class="panel-heading">
+                        <h3>
+                            Trabaja con nosotros
+                        </h3>
+                    </div>
+                    <hr>
+                    <div class="panel-body">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-xs-6 form-group">
+                                <input class="form-control" id="name" name="quotationName" placeholder="Nombre" type="text" required>
+                            </div>
+                            <div class="col-xs-6 form-group">
+                                <input class="form-control" id="email" name="quotationEmail" placeholder="Email" type="email" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6 form-group">
+                                <input class="form-control" id="name" name="quotationNumber" placeholder="+50762667545" type="phone" required>
+                            </div>
+                            <div class="col-xs-6 form-group">
+                                <input class="form-control" id="email" name="quotationCompanyName" placeholder="Dev2tech S.A" type="email" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6 form-group">
+                                <input class="form-control" id="name" name="quotationNumber" placeholder="+50762667545" type="phone" required>
+                            </div>
+                            <div class="col-xs-6 form-group">
+                                <input class="form-control" id="email" name="quotationCompanyName" placeholder="Dev2tech S.A" type="email" required>
+                            </div>
+                        </div>
+                        <textarea class="form-control" id="comments" name="comments" placeholder="Comentarios" rows="6"></textarea><br>
+                        <div class="row">
+                            <div class="col-xs-12 form-group">
+                                <a class="btn btn-default pull-right" type="submit">
+                                    Cotizar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>

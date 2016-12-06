@@ -3,11 +3,7 @@
 
 {% block css %}
 <style media="screen">
-    .service-img
-    {
-        width:100%;
-        height: 100%;
-    }
+
 </style>
 {% endblock %}
 
@@ -27,46 +23,137 @@
     </div>
 </div>
 
-
-<div class="row">
-    <div class="container padding-50px">
-        {% if services_section %}
-            {% for services in services_section %}
-                <div class="col-xs-12 col-sm-8">
-                    <div class="panel panel-default panel-card teal">
-                        <div class="panel-body">
-                            <h2 class="">{{ services.title }}</h2>
-                            <p>{{ services.content }}</p>
-                            <p>
-                                <a class="btn btn-default btn-lg pull-left" href="{% url 'services'%} {{services.link }}">
-                                    Ver más
-                                </a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-4">
-                    <div class="panel panel-default panel-card teal">
-                        <img class="image-responsive service-img" src="{{ services.image.url }}" alt=""></img>
-                    </div>
-                </div>
-            {% endfor %}
-        {% endif %}
+<div class="row padding-50px">
+    <div class="col-xs-12 padding-50px text-center">
+        <div class="container">
+            <h2 class="text-onlysection">
+                Creemos en la excelencia
+                <br>
+                Proveemos servicio profesional.
+            </h2>
+            <p>"Creamos soluciones propias a sus necesidades y hechas a la medida"</p>
+        </div>
     </div>
 </div>
 
+<div class="row padding-50px gray">
+    <div class="container padding-50px">
+        <div class="col-xs-12">
+            <div class="container-fluid">
+                <h2 class="text-center h2-title">
+                    Desarrollo "Full-stack"
+                </h2>
+            </div>
+        </div>
+        <br>
+        <div class="col-xs-12 col-sm-7">
+            <div class="container-fluid">
+                <h3 class="text-center">
+                    Proveemos todas las capas del desarrollo.
+                </h3>
+                <hr>
+                <p class="text-justify">
+                    Tenemos la habilidad de preparar el entorno óptimo de trabajo para distintas aplicaciones, desde las más sencillas hasta las más exigentes.
+                    <br><br>
+                    Ud. no deberá preocuparse por "Nombres de dominio", "sistemás operativos", "calidad de red", "frameworks", "lenguajes de programación", etc... Nosotros nos encargamos de esos detalles, desde la capa más baja o hardware, hasta aspecto lógico.
+                    <br><br>
+                    Lo único que no podemos contemplar es la capa 8 <a href="{% url 'about' %}">(Ver FAQ ...)</a>
+                </p>
+                <br>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-5">
+            <div class="container-fluid">
+                <img src="/media/ide.png" class="img-thumbnail" alt="Desarrollo" width="400">
+                <a  href="{% url 'services' %}full-stack" class="btn btn-default btn-lg btn-buttom pull-right">Ver más...</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row padding-50px gray">
+    <div class="container padding-50px">
+        <div class="col-xs-12">
+            <div class="container-fluid">
+                <h2 class="text-center h2-title">
+                    Marketing
+                </h2>
+            </div>
+        </div>
+        <br>
+        <div class="col-xs-12 col-sm-5">
+            <div class="container-fluid">
+                <img src="/media/marketing.png" class="img-thumbnail" alt="Marketing" width="400">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-7">
+            <div class="container-fluid">
+                <h3 class="text-center">
+                    La palabra más famosa de los últimos tiempos.
+                </h3>
+                <hr>
+                <p class="text-justify">
+                    Marketing aunque sea en ingles, es una palabra que representa "ventas", "crecimiento", "medir en donde te encuentras respecto a tu competencia", "redes sociales", "atraer a un público y aumentar las ventas".
+                    <br><br>
+                    Con nuestra asesoría ud podrá sacar provecho de las ultimás herramientas tecnológicas, para hacerse conocer y llegar a más personas, ocasionando un crecimiento exponencial y provechoso para su negocio
+                    <br><br>
+                    Para conocer más términos  <br><a href="{% url 'about' %}">Ver FAQ ...</a>
+                </p>
+                <br>
+                <a  href="{% url 'services' %}marketing" class="btn btn-default btn-lg btn-buttom pull-right">Ver más...</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row padding-50px gray">
+    <div class="container padding-50px">
+        <div class="col-xs-12">
+            <div class="container-fluid">
+                <h2 class="text-center h2-title">
+                    Correo corporativo
+                </h2>
+            </div>
+        </div>
+        <br>
+        <div class="col-xs-12 col-sm-7">
+            <div class="container-fluid">
+                <h3 class="text-center">
+                    Tenga una impresión profesional ante sus clientes.
+                </h3>
+                <hr>
+                <p class="text-justify">
+                    Los correos corporativos son una herramienta necesaria en toda organización.
+                    <br><br>
+                    Estamos viviendo una revolución tecnológica, las encuestan dejaron de ser en papel, para convertirse en un formulario, las publicidades llegan a un buzón de correo y las conferencias para unir a quien esta lejos, se hacen mediante video-llamada.
+                    <br><br>
+                    Hacer llegar información a nuestros clientes mediante un correo personal, no proporciona imagen profesional.
+                    <br><br>
+                    Para conocer más términos  <br>
+                    <a href="{% url 'about' %}">Ver FAQ ...</a>
+                </p>
+                <br>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-5">
+            <div class="container-fluid">
+                <img src="/media/envelope.png" class="img-thumbnail" alt="Correo Corporativo" width="400">
+                <a  href="{% url 'services' %}correos" class="btn btn-default btn-lg btn-buttom pull-right">Ver más...</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'frontend/contact-form.html' %}
 {% endblock %}
 
 {% block js %}
 <script type="text/javascript">
-$(document).ready(function($){
     $(function(){
       $(".typed-text").typed({
         strings: [
             "Programación web.",
             "Marketing digital.",
             "Contar historias.",
-            "Infraestructura en la nube.",
+            "Infraestructura híbrida, pública y privada.",
             "Correo corporativo.",
         ],
         loop: true,
@@ -76,6 +163,5 @@ $(document).ready(function($){
         backDelay: 2500
       });
     });
-});
 </script>
-<script src="{% static 'base/js/typed.min.js' %}" charset="utf-8"></script>{% endblock %}
+{% endblock %}

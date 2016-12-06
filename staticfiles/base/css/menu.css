@@ -279,34 +279,81 @@
 
 .carousel-fade .carousel-inner .item
 {
-  opacity: 0;
-  -webkit-transition-property: opacity;
-  -moz-transition-property: opacity;
-  -o-transition-property: opacity;
-  transition-property: opacity;
+    opacity: 0;
+    -webkit-transition-property: opacity;
+    -moz-transition-property: opacity;
+    -o-transition-property: opacity;
+    transition-property: opacity;
 }
+
 .carousel-fade .carousel-inner .active
 {
-  opacity: 1;
+    opacity: 1;
 }
+
 .carousel-fade .carousel-inner .active.left,
 .carousel-fade .carousel-inner .active.right
 {
-  left: 0;
-  opacity: 0;
-  z-index: 1;
+    left: 0;
+    opacity: 0;
+    z-index: 1;
 }
+
 .carousel-fade .carousel-inner .next.left,
 .carousel-fade .carousel-inner .prev.right
 {
-  opacity: 1;
+    opacity: 1;
 }
+
 .carousel-fade .carousel-control
 {
-  z-index: 2;
+    z-index: 2;
 }
+
 .index-full-screen-text-box > h2
 {
     font-size: 3em;
     color: #000;
+}
+
+.footer-list
+{
+    padding-top: 45px;
+    padding-bottom: 45px;
+}
+
+.footer-h4
+{
+    font-size: 1.6em;
+    border-bottom: 2px solid gray;
+}
+
+ul.list
+{
+    list-style:none;
+    padding:0px;
+}
+
+.footer-list-a
+{
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.footer-list-a:hover,
+.footer-list-a:focus
+{
+    color: rgba(0, 0, 0, 0.9);
+    text-decoration: none;
+}
+
+.h2-title
+{
+    font-size: 2.4em;
+    font-weight: bolder;
+}
+
+.img-thumbnail
+{
+    background-color: rgba(255,255,255,0);
+    border: rgba(255,255,255,0);
 }

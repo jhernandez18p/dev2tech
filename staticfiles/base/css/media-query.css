@@ -78,12 +78,17 @@
     .index-full-screen-text-box > h2> .typed-text, .hyper-text,
     .typed-text, .typed-cursor
     {
-        font-size: .98em;
+        font-size: 20px;
     }
 
     .text-lema
     {
         font-size: 2em;
         margin: 15% auto;
+    }
+
+    .text-onlysection
+    {
+        font-size: 1.9em;
     }
 }

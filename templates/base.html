@@ -6,8 +6,7 @@
     <title>DEV2TECH | {{title|upper}} </title>
     <meta name="Title" content="{{title}}">
     <meta name="Keywords" content="Web, web development,Cloud Services, cloud, dev, TECH, desarrollo, software ">
-    <link rel="stylesheet" href="{% static 'base/css/menu.css' %}" media="screen" title="no title">
-    <link rel="stylesheet" href="{% static 'base/css/master.css' %}" media="screen" title="no title">
+
 
     {% include 'header.html' %}
 
@@ -46,16 +45,6 @@
                             <a href="{% url 'services' %}">¿Qué hacemos?</a>
                         </li>
                     {% endif %}
-                    {% if page_title != 'done' %}
-                        <li>
-                            <a href="{% url 'done' %}">¡Lo que hemos hecho!</a>
-                        </li>
-                    {% endif %}
-                    {% if page_title != 'team' %}
-                        <li>
-                            <a href="{% url 'team' %}">Dev2team</a>
-                        </li>
-                    {% endif %}
                 </ul>
             </nav>
         </div>
@@ -67,15 +56,113 @@
         {% endblock %}
     </section>
 
-    <footer class="container-fluid gray">
+    <footer class="container-fluid lightGray">
+
+        <div class="row">
+            <div class="container">
+
+                <div class="col-xs-12 col-sm-3 footer-list">
+                    <h4 class="footer-h4">Enlaces</h4>
+                    <ul class="list">
+                        {% if page_title != 'Home' %}
+                            <li>
+                                <a class="footer-list-a" href="{% url 'Home' %}">Inicio</a>
+                            </li>
+                        {% endif %}
+                        {% if page_title != 'about' %}
+                            <li>
+                                <a class="footer-list-a" href="{% url 'about' %}">Conócenos</a>
+                            </li>
+                        {% endif %}
+                        {% if page_title != 'services' %}
+                            <li>
+                                <a class="footer-list-a" href="{% url 'services' %}">¿Qué hacemos?</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+
+                <div class="col-xs-12 col-sm-3 footer-list">
+                    <h4 class="footer-h4">Servicios</h4>
+                    <ul class="list">
+                        <li>
+                            <a class="footer-list-a" href="{% url 'services' %}correos">
+                                Correo corporativo
+                            </a>
+                        </li>
+                        <li>
+                            <a class="footer-list-a" href="{% url 'services' %}full-stack">
+                                Programación web
+                            </a>
+                        </li>
+                        <li>
+                            <a class="footer-list-a" href="{% url 'services' %}infra">
+                                Infraestructura
+                            </a>
+                        </li>
+                        <li>
+                            <a class="footer-list-a" href="{% url 'services' %}marketing">
+                                Marketing
+                            </a>
+                        </li>
+                        <!-- <li>
+                            <a class="footer-list-a" href="{% url 'services' %}storytelling">
+                                storytelling
+                            </a>
+                        </li> -->
+                    </ul>
+                </div>
+
+                <div class="col-xs-12 col-sm-3 footer-list">
+                    <h4 class="footer-h4">Interés</h4>
+                    <ul class="list">
+                        <li>
+                            <a class="footer-list-a" href="{% url 'loyalty' %}">
+                                terminos de servicios
+                            </a>
+                        </li>
+                        <li>
+                            <a class="footer-list-a" href="{% url 'privacy' %}">
+                                terminos de privacidad
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-xs-12 col-sm-3 footer-list">
+                    <h4 class="footer-h4">Redes Sociales</h4>
+                    <ul class="list">
+                        <li>
+                            <a class="footer-list-a" href="https://www.facebook.com/dev2tech" target="_blank">
+                                <i class="icofont icofont-social-facebook"></i>/dev2tech
+                            </a>
+                        </li>
+                        <li>
+                            <a class="footer-list-a" href="https://www.instagram.com/dev2tech/" target="_blank">
+                                <i class="icofont icofont-social-instagram"></i>/dev2tech
+                            </a>
+                        </li>
+                        <li>
+                            <a class="footer-list-a" href="https://twitter.com/@dev2tech" target="_blank">
+                                <i class="icofont icofont-social-twitter"></i>/@dev2tech
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
 
         <div class="row darkGray">
-            <div class="container-fluid">
+
+            <div class="container">
+
                 <div class="col-xs-12 col-sm-6 padding-15px text-center">
                     <p class="text-white">
-                        Copyright &reg; {% now "Y" %} <img src="/media/logo.png" class="image-responsive" alt="" height="18" style="vertical-align:top;">
+                        All right reseved {% now "Y" %} <img src="/media/logo.png" class="image-responsive" alt="" height="18" style="vertical-align:top;">
                     </p>
                 </div>
+
                 <div class="col-xs-12 col-sm-6 padding-15px">
                     <ul class="footer-nav">
                         {% if page_title != 'Home' %}
@@ -93,19 +180,11 @@
                                 <a href="{% url 'services' %}">¿Qué hacemos?</a>
                             </li>
                         {% endif %}
-                        {% if page_title != 'done' %}
-                            <li>
-                                <a href="{% url 'done' %}">¡Lo que hemos hecho!</a>
-                            </li>
-                        {% endif %}
-                        {% if page_title != 'team' %}
-                            <li>
-                                <a href="{% url 'team' %}">Dev2team</a>
-                            </li>
-                        {% endif %}
                     </ul>
                 </div>
+
             </div>
+
         </div>
 
     </footer>
@@ -117,6 +196,8 @@
     <script type="text/javascript">
         $('.panel').matchHeight();
     </script>
+    <script src="{% static 'base/js/typed.min.js' %}" charset="utf-8"></script>
+
     {% block js %}
 
     {% endblock %}

@@ -1,0 +1,58 @@
+{% load staticfiles %}
+
+
+<div class="row">
+    <div class="container">
+
+        <div class="col-xs-12 padding-50px">
+            <h2 class="text-center">Contáctanos</h2>
+        </div>
+
+        <div class="col-xs-12 col-sm-4">
+            <hr>
+            <p><strong>Ubícanos</strong></p>
+            <p>Panamá, PA</p>
+            <p><strong>Llámanos</strong></p>
+            <p>(+507)-6266-75-45</p>
+            <p><strong>Para información en general</strong></p>
+            <p>
+                <a href="mailto:contacto@dev2tech.xyz?subject=Saludos desde sitio web">
+                    contacto@dev2tech.xyz
+                </a>
+            </p>
+        </div>
+
+        <div class="col-xs-12 col-sm-8">
+            <div class="panel gray panel-card panel-default ">
+                <form clas="" action="{% url 'contact' %}" method="post">
+                    <div class="panel-heading">
+                        <h3>
+                            Déjanos un mensaje
+                        </h3>
+                    </div>
+                    <hr>
+                    <div class="panel-body">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <input class="form-control" id="name" name="name" placeholder="Nombre" type="text" required>
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+                            </div>
+                        </div>
+                        <textarea class="form-control" id="comments" name="comments" placeholder="Comentarios" rows="2"></textarea><br>
+                        <div class="row">
+                            <div class="col-sm-12 form-group">
+                                <button class="btn btn-default pull-right" type="submit">
+                                    Enviar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>

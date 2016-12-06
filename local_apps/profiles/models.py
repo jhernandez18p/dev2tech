@@ -23,7 +23,6 @@ class Account(models.Model):
         )
 
 
-
 class User(models.Model):
 
     GENRE_CHOICE = (
