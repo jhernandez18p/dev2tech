@@ -9,6 +9,7 @@ import datetime
 
 from local_apps.classes import helpers
 from local_apps.frontend.models import *
+from local_apps.services.models import *
 
 def about_us(request):
     """  """
@@ -85,11 +86,13 @@ def contact(request):
 
 def done(request):
     """  """
+    technologies = Technologies.objects.all()
     page_title = 'done'
     context = {
         'page_title': page_title,
         'title':'¡Lo que hemos hecho!',
-        'nombre':'Josmer Hernandez'
+        'nombre':'Josmer Hernandez',
+        'technologies':technologies,
     }
 
     return render(request, 'frontend/done.html',context)
