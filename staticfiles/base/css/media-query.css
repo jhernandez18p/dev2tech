@@ -1,24 +1,4 @@
-@media screen and (max-width: 1024px) {
-    .two-collumn > .left, .two-collumn > .right
-    {
-        display: flex;
-        flex-direction: column;
-        height: 60vh;
-        width: 45vw;
-    }
-    .index-full-screen-text-box > h2
-    {
-        font-size: 2.5em;
-    }
-
-    .index-full-screen-text-box > h2> .typed-text, .hyper-text,
-    .typed-text, .typed-cursor
-    {
-        font-size: 2.48em;
-    }
-}
-
-@media screen and (max-width: 818px) {
+@media screen and (max-width: 736px) {
     .two-collumn
     {
         height: 220vh;
@@ -31,12 +11,14 @@
 
     .logo_container
     {
-        left: 30px;
+        left: 15px;
+        top:28px;
     }
 
     .button_container
     {
-        right: 30px;
+        right: 15px;
+        top:28px;
     }
 
     .overlay ul li a
@@ -101,8 +83,59 @@
     {
         font-size: 1.3em;
     }
+
     .text-services
     {
         font-size: 1em;
+    }
+    .media__body h2 { margin-top: 40px; font-size: 1.2em; }
+
+    .media__body p { text-align: right; margin-top: 50px; font-size: .98em;}
+}
+
+@media screen and (max-width: 1024px) {
+    .two-collumn > .left, .two-collumn > .right
+    {
+        display: flex;
+        flex-direction: column;
+        height: 60vh;
+        width: 45vw;
+    }
+    .index-full-screen-text-box > h2
+    {
+        font-size: 2.5em;
+    }
+
+    .index-full-screen-text-box > h2> .typed-text, .hyper-text,
+    .typed-text, .typed-cursor
+    {
+        font-size: 2.48em;
+    }
+    .media__body h2
+    {
+        margin-top: 10px;
+        font-size: .8em;
+    }
+    .media__body p
+    {
+        text-align: right;
+        margin-top: 20px;
+        font-size: .68em;
+    }
+
+    .logo_container
+    {
+        left: 15px;
+        top:28px;
+    }
+
+    .button_container
+    {
+        right: 15px;
+        top:28px;
+    }
+
+    .text-onlysection {
+        font-size: 2.5em;
     }
 }
