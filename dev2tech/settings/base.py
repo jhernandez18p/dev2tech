@@ -98,7 +98,7 @@ EMAIL_HOST = config("DEV2TECH_EMAIL_HOST",)
 EMAIL_PORT = config("DEV2TECH_EMAIL_PORT", cast=int)
 EMAIL_HOST_USER = config("DEV2TECH_EMAIL_HOST_USER",)
 EMAIL_HOST_PASSWORD = config("DEV2TECH_EMAIL_HOST_PASSWORD",)
-EMAIL_USE_TLS = config("DEV2TECH_EMAIL_USE_TLS", cast=bool)
+EMAIL_USE_SSL = config("DEV2TECH_EMAIL_USE_SSL", cast=bool)
 
 """ Security Conf           """
 
