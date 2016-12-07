@@ -3,7 +3,7 @@ from dev2tech.settings.base import *
 
 SECRET_KEY = config('DEV2TECH_SECRET_KEY')
 
-DEBUG = config('DEV2TECH_DEBUG')
+DEBUG = config('DEV2TECH_DEBUG',default=False, cast=bool)
 
 ALLOWED_HOSTS = ['*.dev2tech.xyz']
 
