@@ -3,7 +3,7 @@ from decouple import config
 
 SECRET_KEY = config('DEV2TECH_SECRET_KEY')
 
-DEBUG = config('DEV2TECH_DEBUG',default=False, cast=bool)
+DEBUG = False
 
 ALLOWED_HOSTS = ['*.dev2tech.xyz']
 
