@@ -1,5 +1,5 @@
 from dev2tech.settings.base import *
-
+from decouple import config
 
 SECRET_KEY = config('DEV2TECH_SECRET_KEY')
 
