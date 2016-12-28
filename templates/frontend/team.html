@@ -3,14 +3,85 @@
 
 
 {% block css %}
+<style media="screen">
+</style>
 {% endblock %}
 
 {% block content %}
-<div class="row vh160 indigo">
-    <div class="container-fluid">
-        <h2 class="text-center">test</h2>
+<div id="image-quote" class="row gray quote hyper-padding">
+    <div class="quote-text overall ">
+        <h3 class="center-title hyper-text">
+            "Trabaja inteligente"
+            <br>
+            "Resultados asegurados"
+        </h3>
     </div>
 </div>
+<div class="row gray jumbo-padding ">
+    <div class=" overall ">
+        <h3 class="center-title hyper-text">
+            Conoce a nuestro equipo
+        </h3>
+    </div>
+</div>
+<div id="scroll" class="mouse">
+    <div class="scroll">
+    </div>
+    <div class="scroll-text">
+        <p>Scroll</p>
+    </div>
+</div>
+
+<!-- Our team Section -->
+<div id="team" class="section team content-section">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <h3 class="jumbo-text">Conoce a la gente que hace este proyecto realidad</h3>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 col-sm-offset-1">
+                        <div class="team-member">
+                            <figure>
+                                <img src="/media/josmer.jpg" alt="" class="img-responsive">
+                                <figcaption>
+                                    <p>
+                                    </p>
+                                    <ul>
+                                        <li><a href=""><i class="fa fa-github fa-2x"></i></a></li>
+                                        <li><a href=""><i class="fa fa-twitter fa-2x"></i></a></li>
+                                        <li><a href=""><i class="fa fa-linkedin fa-2x"></i></a></li>
+                                    </ul>
+                                </figcaption>
+                            </figure>
+                            <h4>Josmer Hernández</h4>
+                            <p>CEO | Developer</p>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="team-member">
+                            <figure>
+                                <img src="" alt="" class="img-responsive">
+                                <figcaption>
+                                    <p></p>
+                                    <ul>
+                                        <li><a href=""><i class="fa fa-facebook fa-2x"></i></a></li>
+                                        <li><a href=""><i class="fa fa-twitter fa-2x"></i></a></li>
+                                        <li><a href=""><i class="fa fa-linkedin fa-2x"></i></a></li>
+                                    </ul>
+                                </figcaption>
+                            </figure>
+                            <h4>Jeannys Alessandro</h4>
+                            <p>CMO | Founder</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% include 'frontend/contact-form.html' %}
 {% endblock %}
 
 {% block js %}

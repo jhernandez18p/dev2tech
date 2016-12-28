@@ -7,7 +7,7 @@ DEBUG = False
 
 # ALLOWED_HOSTS = ['*.dev2tech.xyz']
 
-AUTH_USER_MODEL = 'intra_profile.User'
+AUTH_USER_MODEL = 'local_apps.profiles.EmailBackend.EmailBackend'
 
 STATIC_URL = 'https://%s/' % config('AWS_BUCKET_URL')
 

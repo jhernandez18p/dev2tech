@@ -10,6 +10,7 @@ from local_apps.profiles import auth as auth_views
 urlpatterns = [
     # frontend
     url(r'^',  include('local_apps.frontend.urls') ),
+    url(r'^servicios/',  include('local_apps.services.urls') ),
     # Admin
     url(r'^adminsite/', admin.site.urls),
     # Auth

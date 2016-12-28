@@ -2,22 +2,24 @@
 {% load staticfiles %}
 
 {% block css %}
-
+<style media="screen">
+    #image-quote
+    {
+        background-image: url(/media/about-quote.jpg);
+    }
+    #text-quote-margin-top
+    {
+        top: 18% !important;
+    }
+</style>
 {% endblock %}
 
 {% block content %}
-<div class="row gray vh50">
-    <br>
-    <br>
-    <br>
-    <br class="hidden-xs">
-    <br class="hidden-xs">
-    <div class="container-fluid">
-        <div class="col-xs-12">
-            <h2 class="text-center text-onlysection">
-                Conócenos <br><b class="typed-text"></b>
-            </h2>
-        </div>
+<div id="image-quote" class="row gray quote vh50 ">
+    <div class="quote-text overall center-container">
+        <h2 class="hyper-text center-title">
+            Conócenos <br><b class="typed-text"></b>
+        </h2>
     </div>
 </div>
 
@@ -25,31 +27,42 @@
     <div class="container padding-50px">
         {% if info_sections %}
             {% for info in info_sections %}
-                <div class="col-xs-12 col-sm-6">
-                    <div class="panel panel-card panel-default">
-                        <div class="panel-body">
-                            <h2 class="text-{{ info.css_classes }}" >{{ info.title }}</h2>
-                            <p>{{ info.content }}</p>
-                        </div>
+            <div class="col-xs-12 col-sm-6 index-services-container">
+                <div class="index-services panel panel-card">
+                    <div class="index-services-title">
+                        <h3 class="jumbo-text center-title">{{ info.title }}</h3>
+                    </div>
+                    <hr>
+                    <div class="index-services-content center-container">
+                        <p class="card-text">{{ info.content }}</p>
                     </div>
                 </div>
+            </div>
             {% endfor %}
         {% endif %}
     </div>
 </div>
 
-<div class="row flex-row blue">
+<div id="scroll" class="mouse">
+    <div class="scroll">
+    </div>
+    <div class="scroll-text">
+        <p>Scroll</p>
+    </div>
+</div>
+
+<div class="row flex-row">
     <div class="container padding-50px">
         <div class="col-xs-12">
-            <h2 class="text-center text-white">Nuestros valores</h2>
+            <h2 class="hyper-text center-title">Nuestros valores</h2>
             <br>
         </div>
         {% if value_sections %}
             {% for values in value_sections %}
             <div class="col-xs-12 col-sm-6 col-mg-3 col-xl-3">
-                <div class="panel panel-card panel-default flex-col">
+                <div class="panel panel-card panel-default gray flex-col">
                     <div class="panel-body">
-                        <h2 class="text-center" >{{ values.title }}</h2>
+                        <h3 class="jumbo-text center-title" >{{ values.title }}</h3>
                         <p class="text-center">
                             <img src="{{ values.image.url }}" alt="{{ values.content }}" width="200"/>
                         </p>
@@ -63,13 +76,18 @@
 
 {% include 'frontend/contact-us.html' %}
 
-<div class="row turquesa padding-50px">
-    <div class="container">
-        <div class="col-xs-12">
-            <h2 class="text-center text-white">Preguntas frecuentes</h2>
-            <br>
-        </div>
-        <div class="col-xs-12">
+<div class="row turquesa padding-50px quote">
+    <div class="hidden-xs quote-triangle white">
+        <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 100 100">
+            <polygon points="0 0 100 0 100 100 0 0"></polygon>
+        </svg>
+    </div>
+    <div class="quote-text overall center-container">
+        <h3 id="text-quote-margin-top" class="hyper-text center-title">Preguntas frecuentes</h3>
+    </div>
+    <br><br>
+    <div class="container padding-50px">
+        <div class="col-xs-12 padding-50px">
             <div class="panel-group" id="accordion">
                 {% if faqs %}
                     {% for faq in faqs %}
@@ -90,10 +108,13 @@
             </div>
         </div>
     </div>
+    <div class="hidden-xs quote-triangle-bottom gray-footer">
+        <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 100 100">
+            <polygon class="a" points="0 0 100 100 0 100 0 0"></polygon>
+        </svg>
+    </div>
 </div>
 {% endblock %}
-
-
 
 {% block js %}
 <script type="text/javascript">

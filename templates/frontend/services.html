@@ -3,152 +3,92 @@
 
 {% block css %}
 <style media="screen">
+    #image-quote
+    {
+        background-image: url(/media/services-quote.jpeg);
+    }
 
+    .card
+    {
+        background-color:#FFF;
+        border: 3px solid rgba(63,63,63,0.06);
+        margin-top: 50px;
+        margin-bottom: 15px;
+        padding-bottom: 25px;
+    }
 </style>
 {% endblock %}
 
 {% block content %}
-<div class="row turquesa vh60">
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="container-fluid">
-        <div class="col-xs-12">
-            <h2 class="text-center text-onlysection">
-                Ofrecemos:<br><b class="typed-text"></b>
-            </h2>
-        </div>
+<div class="row turquesa vh50 center-container">
+    <div class="">
+        <h2 class="center-title hyper-text">
+            Ofrecemos:<br><b class="typed-text"></b>
+        </h2>
+    </div>
+</div>
+<div id="image-quote" class="row gray quote hyper-padding">
+    <div class="quote-text overall ">
+        <h3 class="center-title hyper-text">
+            "Creemos en la excelencia.
+            <br>
+            Proveemos servicio profesional"
+        </h3>
+    </div>
+</div>
+<div id="scroll" class="mouse">
+    <div class="scroll">
+    </div>
+    <div class="scroll-text">
+        <p>Scroll</p>
     </div>
 </div>
 
-<div class="row padding-50px">
-    <div class="col-xs-12 padding-50px text-center">
-        <div class="container">
-            <h2 class="text-onlysection">
-                Creemos en la excelencia.
-                <br>
-                Proveemos servicio profesional.
-            </h2>
-            <p>"Creamos soluciones propias a sus necesidades y hechas a la medida"</p>
-        </div>
-    </div>
-</div>
-
-<div class="row padding-50px gray">
-    <div class="container padding-50px">
+{% if services_section %}
+<div class="row">
+{% for services in services_section %}
+    <div class="container card panel-card">
         <div class="col-xs-12">
             <div class="container-fluid">
-                <h2 class="text-center h2-title">
-                    Desarrollo "Full-stack"
-                </h2>
-            </div>
-        </div>
-        <br>
-        <div class="col-xs-12 col-sm-7">
-            <div class="container-fluid">
-                <h3 class="text-center">
-                    Proveemos todas las capas del desarrollo.
+                <h3 class="center-title hyper-text">
+                    {{services.name}}
                 </h3>
-                <hr>
-                <p class="text-justify">
-                    Tenemos la habilidad de preparar el entorno óptimo de trabajo para distintas aplicaciones, desde las más sencillas hasta las más exigentes.
-                    <br><br>
-                    Ud. no deberá preocuparse por "Nombres de dominio", "sistemás operativos", "calidad de red", "frameworks", "lenguajes de programación", etc... Nosotros nos encargamos de esos detalles, desde la capa más baja o hardware, hasta aspecto lógico.
-                    <br><br>
-                    Lo único que no podemos contemplar es la capa 8 <br>
-                    <a href="{% url 'about' %}">Ver FAQ...</a>
-                </p>
-                <br>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-5">
-            <div class="container-fluid">
-                <img src="/media/ide.png" class="img-thumbnail" alt="Desarrollo" width="400">
-                <a  href="{% url 'services' %}full-stack" class="btn btn-default btn-lg btn-buttom pull-right">Ver más...</a>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row padding-50px gray">
-    <div class="container padding-50px">
-        <div class="col-xs-12">
-            <div class="container-fluid">
-                <h2 class="text-center h2-title">
-                    Marketing
-                </h2>
-            </div>
-        </div>
-        <br>
-        <div class="col-xs-12 col-sm-5">
-            <div class="container-fluid">
-                <img src="/media/marketing.png" class="img-thumbnail" alt="Marketing" width="400">
             </div>
         </div>
         <div class="col-xs-12 col-sm-7">
             <div class="container-fluid">
-                <h3 class="text-center">
-                    La palabra más famosa de los últimos tiempos.
-                </h3>
-                <hr>
-                <p class="text-justify">
-                    Marketing aunque sea en ingles, es una palabra que representa "ventas", "crecimiento", "medir en donde te encuentras respecto a tu competencia", "redes sociales", "atraer a un público y aumentar las ventas".
-                    <br><br>
-                    Con nuestra asesoría ud podrá sacar provecho de las ultimás herramientas tecnológicas, para hacerse conocer y llegar a más personas, ocasionando un crecimiento exponencial y provechoso para su negocio.
-                    <br><br>
-                    Para conocer más términos.<br>
-                    <a href="{% url 'about' %}">Ver FAQ...</a>
-                </p>
-                <br>
-                <a  href="{% url 'services' %}marketing" class="btn btn-default btn-lg btn-buttom pull-right">Ver más...</a>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row padding-50px gray">
-    <div class="container padding-50px">
-        <div class="col-xs-12">
-            <div class="container-fluid">
-                <h2 class="text-center h2-title">
-                    Correo corporativo
+                <h2 class="center-title jumbo-text">
+                    {{services.title}}
                 </h2>
             </div>
-        </div>
-        <br>
-        <div class="col-xs-12 col-sm-7">
-            <div class="container-fluid">
-                <h3 class="text-center">
-                    Tenga una impresión profesional frente a sus clientes.
-                </h3>
-                <hr>
-                <p class="text-justify">
-                    Los correos corporativos son una herramienta necesaria en toda organización.
-                    <br><br>
-                    Estamos viviendo una revolución tecnológica, las encuestan dejaron de ser en papel, para convertirse en un formulario, las publicidades llegan a un buzón de correo y las conferencias para unir a quienes están lejos, se hacen mediante video-llamada.
-                    <br><br>
-                    Hacer llegar información a nuestros clientes mediante un correo personal, no proporciona imagen profesional.
-                    <br><br>
-                    Para conocer más términos. <br>
-                    <a href="{% url 'about' %}">Ver FAQ...</a>
-                </p>
-                <br>
+            <div class="">
+                {{services.short_description|linebreaks|truncatewords:50}}
             </div>
         </div>
         <div class="col-xs-12 col-sm-5">
+            {% if services.image %}
             <div class="container-fluid">
-                <img src="/media/envelope.png" class="img-thumbnail" alt="Correo Corporativo" width="400">
-                <a  href="{% url 'services' %}correos" class="btn btn-default btn-lg btn-buttom pull-right">Ver más...</a>
+                <img src="{{services.image.url}}" class="img-thumbnail" alt="Desarrollo" width="400">
+            </div>
+            {% endif %}
+            <hr>
+            <div class="text-center">
+                <a  href="{{services.get_absolute_url}}" class="btn btn-default btn-lg btn-buttom">Ver más...</a>
             </div>
         </div>
     </div>
+{% endfor %}
 </div>
+{% endif %}
 
 {% include 'frontend/contact-form.html' %}
+
 {% endblock %}
 
 {% block js %}
 <script type="text/javascript">
+$(document).ready(function($)
+{
     $(function(){
       $(".typed-text").typed({
         strings: [
@@ -165,5 +105,6 @@
         backDelay: 2500
       });
     });
+});
 </script>
 {% endblock %}

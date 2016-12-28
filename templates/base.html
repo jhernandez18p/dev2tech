@@ -43,6 +43,11 @@
                         <a href="{% url 'done' %}">¡Lo que hemos hecho!</a>
                     </li>
                     {% endif %}
+                    {% if page_title != 'team' %}
+                    <li>
+                        <a href="{% url 'team' %}">Dev2team</a>
+                    </li>
+                    {% endif %}
                 </ul>
             </nav>
         </div>
@@ -58,20 +63,22 @@
                         <li>
                             <a class="footer-list-a" href="{% url 'Home' %}">Inicio</a>
                         </li>
-                        {% endif %}
-                        {% if page_title != 'about' %}
+                        {% endif %}{% if page_title != 'about' %}
                         <li>
                             <a class="footer-list-a" href="{% url 'about' %}">Conócenos</a>
                         </li>
-                        {% endif %}
-                        {% if page_title != 'services' %}
+                        {% endif %}{% if page_title != 'services' %}
                         <li>
                             <a class="footer-list-a" href="{% url 'services' %}">¿Qué hacemos?</a>
                         </li>
-                        {% endif %}
-                        {% if page_title != 'done' %}
+                        {% endif %}{% if page_title != 'done' %}
                         <li>
                             <a class="footer-list-a" href="{% url 'done' %}">¡Lo que hemos hecho!</a>
+                        </li>
+                        {% endif %}
+                        {% if page_title != 'team' %}
+                        <li>
+                            <a class="footer-list-a" href="{% url 'team' %}">Dev2team</a>
                         </li>
                         {% endif %}
                     </ul>
@@ -79,75 +86,59 @@
                 <div class="col-xs-12 col-sm-3 footer-list">
                     <h4 class="footer-h4">Servicios</h4>
                     <ul class="list">
+                        {% if Top_5_Services %}{% for services in Top_5_Services %}
                         <li>
-                            <a class="footer-list-a" href="{% url 'services' %}correos">
-                                Correo corporativo
+                            <a class="footer-list-a" href="{{services.get_absolute_url}}">
+                                {{services.name}}
                             </a>
                         </li>
-                        <li>
-                            <a class="footer-list-a" href="{% url 'services' %}full-stack">
-                                Programación web
-                            </a>
-                        </li>
-                        <li>
-                            <a class="footer-list-a" href="{% url 'services' %}infra">
-                                Infraestructura
-                            </a>
-                        </li>
-                        <li>
-                            <a class="footer-list-a" href="{% url 'services' %}marketing">
-                                Marketing
-                            </a>
-                        </li>
+                        {% endfor %}{% endif %}
                     </ul>
                 </div>
                 <div class="col-xs-12 col-sm-3 footer-list">
                     <h4 class="footer-h4">Interés</h4>
                     <ul class="list">
+                        <li><strong>Ubícanos</strong></li>
+                        <li>Panamá, PA</li>
+                        <li><strong>Llámanos</strong></li>
+                        <li>(+507)-6266-75-45</li>
+                        <li><strong>Para información en general</strong></li>
                         <li>
-                            <a class="footer-list-a" href="{% url 'loyalty' %}">
-                                terminos de servicios
-                            </a>
-                        </li>
-                        <li>
-                            <a class="footer-list-a" href="{% url 'privacy' %}">
-                                terminos de privacidad
+                            <a href="mailto:contacto@dev2tech.xyz?subject=Saludos desde sitio web">
+                                contacto@dev2tech.xyz
                             </a>
                         </li>
                     </ul>
                 </div>
                 <div class="col-xs-12 col-sm-3 footer-list">
                     <h4 class="footer-h4">Redes Sociales</h4>
-                    <ul class="list">
+                    <ul class="social-media-list">
                         <li>
                             <a class="footer-list-a" href="https://www.facebook.com/dev2tech" target="_blank">
-                                facebook.com/dev2tech
+                                <img class="social-media-icon" src="/media/icons/facebook-icon.png" alt="">
                             </a>
                         </li>
                         <li>
                             <a class="footer-list-a" href="https://www.instagram.com/dev2tech/" target="_blank">
-                                instagram.com/dev2tech/
+                                <img class="social-media-icon" src="/media/icons/instagram-icon.png" alt="">
                             </a>
                         </li>
                         <li>
                             <a class="footer-list-a" href="https://twitter.com/@dev2tech" target="_blank">
-                                twitter.com/@dev2tech
+                                <img class="social-media-icon" src="/media/icons/twitter-icon.png" alt="">
                             </a>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="row darkGray">
-
+        <div class="row darkGray footer-all-right">
             <div class="container">
-
                 <div class="col-xs-12 col-sm-6 padding-15px text-center">
                     <p class="text-white">
-                        All right reseved {% now "Y" %} <img src="/media/logo.png" class="image-responsive" alt="" height="18" style="vertical-align:top;">
+                        All right reseved {% now "Y" %} <span class="footer-logo-text logo-font" >Dev2tech S.A.</span>
                     </p>
                 </div>
-
                 <div class="col-xs-12 col-sm-6 padding-15px">
                     <ul class="footer-nav">
                         {% if page_title != 'Home' %}
@@ -170,23 +161,23 @@
                             <a href="{% url 'done' %}">¡Lo que hemos hecho!</a>
                         </li>
                         {% endif %}
+                        {% if page_title != 'team' %}
+                        <li>
+                            <a href="{% url 'team' %}">Dev2team</a>
+                        </li>
+                        {% endif %}
                     </ul>
                 </div>
-
             </div>
-
         </div>
-
     </footer>
 
     <script src="{% static 'base/js/vendor/jquery.js' %}" charset="utf-8"></script>
     <script src="{% static 'base/js/bootstrap.min.js' %}" charset="utf-8"></script>
-    <script src="{% static 'base/js/app.js' %}" charset="utf-8"></script>
     <script src="{% static 'base/js/sh.js' %}" charset="utf-8"></script>
-    <script type="text/javascript">
-        $('.panel').matchHeight();
-    </script>
     <script src="{% static 'base/js/typed.min.js' %}" charset="utf-8"></script>
+    <script src="{% static 'base/js/marked.min.js' %}" charset="utf-8"></script>
+    <script src="{% static 'base/js/app.js' %}" charset="utf-8"></script>
 
     {% block js %}
 

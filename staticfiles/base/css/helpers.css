@@ -1,0 +1,224 @@
+/*
+    Heights
+*/
+.hyper-padding
+{
+    padding-top: 250px;
+    padding-bottom: 250px;
+}
+
+.vh10
+{
+    height: 10vh;
+}
+
+.vh20
+{
+    height: 25vh;
+}
+
+.vh30
+{
+    height: 30vh;
+}
+
+.vh40
+{
+    height: 40vh;
+}
+
+.vh50
+{
+    height: 50vh;
+}
+
+.vh60
+{
+    height: 60vh;
+}
+
+.vh70
+{
+    height: 70vh;
+}
+
+.vh80
+{
+    height: 80vh;
+}
+
+.vh90
+{
+    height: 90vh;
+}
+
+.vh100
+{
+    height: 100vh;
+}
+
+.vh110
+{
+    height: 110vh;
+}
+
+.vh120
+{
+    height: 120vh;
+}
+
+.vh130
+{
+    height: 130vh;
+}
+
+.vh140
+{
+    height: 140vh;
+}
+
+.vh150
+{
+    height: 150vh;
+}
+
+.vh160
+{
+    height: 160vh;
+}
+
+/*
+    Text
+*/
+.center-title
+{
+    color: #1c1c1c;
+    text-align: center;
+}
+
+.hyper-text
+{
+    font-size: 3.5em;
+}
+
+.jumbo-text
+{
+    font-size: 1.75em;
+}
+
+.typed-text, .typed-cursor
+{
+    font-size: 1em;
+}
+
+.typed-cursor
+{
+    color : rgb(255,255,255);
+}
+
+.link-reset:hover,
+.link-reset:active,
+.link-reset:focus,
+.link-reset:visited
+{
+    color: #000;
+    text-decoration: none;
+}
+
+.card-text
+{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+/*
+    Position
+*/
+
+.overall
+{
+    z-index: 9000;
+}
+
+.center-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+}
+
+.center-container-content
+{
+    resize: both;
+}
+
+#text-margin-10vh
+{
+    margin-top: 15vh !important;
+}
+
+.box-border
+{
+    border: 3px solid #FFF;
+}
+/*
+    Media
+*/
+.image-full-screen
+{
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.image-thumbnail-small
+{
+    width: 200px;
+}
+
+/*
+    # Index Video
+*/
+
+.video-header
+{
+    width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    border-left: none;
+    border-right: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.video-container
+{
+    position: absolute;
+    margin: auto;
+    min-height:100%;
+    min-width:50%;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.video-container > video
+{
+    z-index: 7;
+    opacity: 0.5;
+}
+
+/*
+    Custom
+*/
+
+.panel-card:hover
+{
+    z-index: 2;
+    box-shadow: rgba(0, 0, 0, 0.117647) 0px 0px 8px 0px, rgba(0, 0, 0, 0.239216) 0px 8px 8px 0px;
+}

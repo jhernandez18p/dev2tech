@@ -1,5 +1,6 @@
 $(document).ready(function($)
 {
+    $('.panel').matchHeight();
     // Defining a function to set size for #hero
     function fullscreen()
     {
@@ -35,5 +36,17 @@ $(document).ready(function($)
     $('.frame').click(function(){
 		$('.top').addClass('open');
 		$('.message').addClass('pull');
-	})
+	});
+
+    $('#scroll').click(function() {
+        $(window).animate().scrollTop(700);
+    });
+
+    $(".content-markdown").each(function () {
+        var content = $(this).text();
+        console.log(content);
+        var markedContent = marked(content);
+        console.log(markedContent);
+        $(this).html(markedContent)
+    })
 });

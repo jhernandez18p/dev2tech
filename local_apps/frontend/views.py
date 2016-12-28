@@ -6,29 +6,25 @@ from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.views.generic import *
 import datetime
+import random
 
 from local_apps.classes import helpers
 from local_apps.frontend.models import *
 from local_apps.services.models import *
 
+@login_required
 def about_us(request):
     """  """
-
-    category = SiteCategories.objects.get(category='About-us')
-    sub_categories =SiteSubCategories.objects.all().filter(category=category.id)
-
+    sub_categories =SiteSubCategories.objects.all()
     for sub_category in sub_categories:
-
         if sub_category.sub_category == 'info':
-
             info_section_id = sub_category.id
-
         elif sub_category.sub_category == 'values':
-
             value_section_id = sub_category.id
 
     info_sections = Sections.objects.all().filter(sub_category=info_section_id)
-    value_sections = Sections.objects.all().filter(sub_category=value_section_id)
+    value_sections = list(Sections.objects.all().filter(sub_category=value_section_id))
+    random.shuffle(value_sections)
     faqs = FAQ.objects.all()
     page_title = 'about'
     # print(info_sections[1])
@@ -46,8 +42,9 @@ def about_us(request):
 
     return render(request, template, context)
 
+@login_required
 def contact(request):
-
+    """#Contact Forms """
     if request.method == 'GET':
 
         return HttpResponseRedirect('/')
@@ -84,6 +81,7 @@ def contact(request):
         }
         return HttpResponseRedirect('/')
 
+@login_required
 def done(request):
     """  """
     technologies = Technologies.objects.all()
@@ -97,20 +95,20 @@ def done(request):
 
     return render(request, 'frontend/done.html',context)
 
+@login_required
 def home(request):
     """  """
-
-    category = SiteCategories.objects.get(category='Home')
     sub_categories =SiteSubCategories.objects.all()
 
     for sub_category in sub_categories:
         if sub_category.sub_category == 'header':
             header_subcat = sub_category
-        if sub_category.sub_category == 'services':
-            services_subcat = sub_category
+        elif sub_category.sub_category == 'all services':
+            services_subcat = sub_category.id
 
     banners = Banners.objects.all().filter(sub_category=header_subcat)
-    services = Sections.objects.all().filter(sub_category=services_subcat)
+    services = list(Services.objects.all().filter(sub_category=services_subcat))
+    random.shuffle(services)
     page_title = 'Home'
 
     context = {
@@ -123,10 +121,10 @@ def home(request):
 
     return render(request, 'frontend/index.html',context)
 
+@login_required
 def services(request):
     """  """
-    category = SiteCategories.objects.get(category='Services')
-    sub_categories =SiteSubCategories.objects.all().filter(category=category.id)
+    sub_categories =SiteSubCategories.objects.all()
 
     for sub_category in sub_categories:
         if sub_category.sub_category == 'all services':
@@ -134,7 +132,9 @@ def services(request):
         elif sub_category.sub_category == 'success_stories':
             value_section_id = sub_category.id
 
-    services_section = Sections.objects.all().filter(sub_category=services_section_id).order_by('title')
+    services_section = list(Services.objects.all().filter(sub_category=services_section_id).order_by('name'))
+
+    random.shuffle(services_section)
 
     page_title = 'services'
     context = {
@@ -146,6 +146,7 @@ def services(request):
 
     return render(request, 'frontend/services.html',context)
 
+@login_required
 def team(request):
     """  """
     page_title = 'team'

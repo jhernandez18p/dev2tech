@@ -75,7 +75,7 @@
 
 .gray
 {
-    background-color: rgba(3, 3, 3, 0.18);
+    background-color: rgba(201, 201, 201, 1);
 }
 
 .lightGray
@@ -101,4 +101,14 @@
 .text-plomo
 {
     color: #333;
+}
+
+.text-darken
+{
+    color: rgb(0,0,0);
+}
+
+.text-white
+{
+    color: #FFF;
 }

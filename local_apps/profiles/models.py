@@ -2,53 +2,46 @@ import datetime
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
-class Account(models.Model):
+class UserProfile(models.Model):
 
-    name =  models.CharField(max_length=50)
-    duration = models.CharField(max_length=10, default='%Y%b%d')
-
-    def __str__(self):
-
-        return self.name
-
-    class Meta:
-
-        verbose_name = ('Account type')
-        verbose_name_plural = ('Account type')
-        permissions = (
-            ("can_create_account", "Can create account"),
-            ("can_delete_account", "Can delete account"),
-            ("can_update_account", "Can update account"),
-        )
-
-
-class User(models.Model):
-
-    GENRE_CHOICE = (
-        (1,('Hombre')),
-        (2,('Mujer')),
+    _USER = 1
+    CLIENT = 2
+    STAFF = 3
+    ROLE_CHOICES = (
+        (_USER, 'User'),
+        (CLIENT, 'Client'),
+        (STAFF, 'Staff'),
     )
 
-    intra_user = models.ForeignKey(User,on_delete=models.CASCADE)
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
+    GENRE_CHOICE = (
+        (1,('Man')),
+        (2,('Moman')),
+    )
+
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    birthdate = models.DateField(null=True, blank=True)
     bio = models.TextField(max_length=200, blank=True)
     genre = models.IntegerField(choices=GENRE_CHOICE,default=1)
-    account = models.ForeignKey(Account,on_delete=models.CASCADE,)
-    avatar = models.ImageField(upload_to="user_account_avatar",blank=True)
-
-    def __str__(self):
-
-        return self.user_name()
+    # account = models.ForeignKey(Account,on_delete=models.CASCADE, )
+    avatar = models.ImageField(upload_to="user/avatar/",blank=True)
+    created = models.DateTimeField(auto_now=True,auto_now_add=False)
+    time_stamp = models.DateTimeField(auto_now=False,auto_now_add=True)
+    location = models.CharField(max_length=30, blank=True)
+    role = models.PositiveSmallIntegerField(choices=ROLE_CHOICES, null=True, blank=True)
 
     def user_name(self):
-        return '%s %s' % (self.first_name,self.last_name)
+        return '%s %s' % (self.user.first_name, self.user.last_name,)
+
+    def __str__(self):
+        return self.user_name()
 
     class Meta:
 
-        verbose_name = ('User')
-        verbose_name_plural = ('Users')
+        verbose_name = ('User Profile')
+        verbose_name_plural = ('User Profile')
         permissions = (
             ("can_create_user", "Can create user"),
             ("can_delete_user", "Can delete user"),

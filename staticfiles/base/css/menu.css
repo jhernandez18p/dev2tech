@@ -7,42 +7,6 @@
     top: 70%;
     left: 0;
     margin: 0 auto;
-    font-family: 'Roboto', sans-serif;
-}
-
-.index-text-box p
-{
-    font-size: 20px;
-}
-
-.index-text-box a
-{
-    display: inline-block;
-    position: relative;
-    text-align: center;
-    color: #333333;
-    text-decoration: none;
-    font-size: 20px;
-    overflow: hidden;
-    top: 5px;
-}
-
-.index-text-box a:after
-{
-    content: '';
-    position: absolute;
-    background: #333333;
-    height: 2px;
-    width: 0%;
-    transform: translateX(-50%);
-    left: 50%;
-    bottom: 0;
-    transition: .35s ease;
-}
-
-.index-text-box a:hover:after
-{
-    width: 100%;
 }
 
 .logo_container
@@ -209,7 +173,6 @@
     top: 50%;
     transform: translateY(-50%);
     font-size: 50px;
-    font-family: 'Vollkorn', serif;
     font-weight: 400;
     text-align: center;
     z-index: 100;
@@ -355,4 +318,106 @@ ul.list
 {
     background-color: rgba(255,255,255,0);
     border: rgba(255,255,255,0);
+}
+
+
+/*
+    # Scroll Icon
+*/
+
+.mouse
+{
+    position: absolute;
+    width: 22px;
+    height: 42px;
+    bottom: 40px;
+    left: 50%;
+    margin-left: -12px;
+    border-radius: 15px;
+    border: 2px solid #000;
+    -webkit-animation: intro 1s;
+    animation: intro 1s;
+    z-index: 999;
+}
+.scroll
+{
+    display: block;
+    width: 3px;
+    height: 3px;
+    margin: 6px auto;
+    border-radius: 4px;
+    background: #FFF;
+    -webkit-animation: finger 1s infinite;
+    animation: finger 1s infinite;
+    z-index: 999;
+}
+
+.scroll-text
+{
+    margin-top: -50px;
+    margin-left: -20px;
+}
+.scroll-text > p
+{
+    color: #FFF
+}
+
+@-webkit-keyframes intro
+{
+    0%
+    {
+        opacity: 0;
+        -webkit-transform: translateY(40px);
+        transform: translateY(40px);
+    }
+    100%
+    {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes intro
+{
+    0%
+    {
+        opacity: 0;
+        -webkit-transform: translateY(40px);
+        transform: translateY(40px);
+    }
+    100%
+    {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@-webkit-keyframes finger
+{
+    0%
+    {
+        opacity: 1;
+    }
+    100%
+    {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+        transform: translateY(20px);
+    }
+}
+
+@keyframes finger
+{
+    0%
+    {
+        opacity: 1;
+    }
+    100%
+    {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+        transform: translateY(20px);
+    }
 }

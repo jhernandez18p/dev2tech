@@ -17,13 +17,19 @@ DJANGO_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
-    # 'storages',
+    'storages',
+    'pagedown',
 ]
 
 LOCAL_APPS = [
+    'local_apps.blog',
+    'local_apps.client',
+    'local_apps.dashboard',
     'local_apps.frontend',
+    'local_apps.payment',
     'local_apps.profiles',
     'local_apps.services',
+    'local_apps.team',
 ]
 
 THIRD_PARTY_APPS = []
@@ -53,6 +59,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'dev2tech.settings.custom_context_processors.menu',
             ],
         },
     },
@@ -126,3 +133,4 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.abspath(os.path.join(os.path.join(BASE_DIR,os.pardir),'staticfiles')),
 )
+# STATIC_ROOT = os.path.abspath(os.path.join(os.path.join(BASE_DIR,os.pardir),'staticfiles'))

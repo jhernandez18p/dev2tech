@@ -72,3 +72,11 @@ class FAQAdmin(admin.ModelAdmin):
     fields = ('question','sub_category','answers',)
     search_fields = ['question','sub_category']
     list_display = ('question','sub_category','answers',)
+
+@admin.register(Colors)
+class ColorsAdmin(admin.ModelAdmin):
+    """ Panel Admin, fields to site info """
+
+    fields = ('name','hex_code','rgba_code',)
+    search_fields = ['name',]
+    list_display = ('name','hex_code','rgba_code',)

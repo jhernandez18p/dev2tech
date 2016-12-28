@@ -138,3 +138,20 @@ class FAQ(models.Model):
         verbose_name = ('Frecuent asked cuestion')
         verbose_name_plural = ('Frecuent asked cuestions')
         ordering = ['-sub_category']
+
+
+class Colors(models.Model):
+    """ Frecuent asked questions """
+
+    name = models.CharField(max_length=144)
+    hex_code = models.CharField(max_length=144, blank=True)
+    rgba_code = models.CharField(max_length=144, blank=True)
+    time_stamp = models.DateTimeField(auto_now=False,auto_now_add=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+
+        verbose_name = ('Frontend Colors')
+        verbose_name_plural = ('Frontend Colors')

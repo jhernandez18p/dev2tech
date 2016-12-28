@@ -1,15 +1,15 @@
-<div class="row gray">
+<div class="row">
     <div class="container padding-50px">
         <div class="col-xs-6">
             <br><br>
-            <h2 class="text-center">
+            <h2 class="text-center h2-title">
                 Contáctanos
             </h2>
         </div>
         <div class="col-xs-6">
             <p class="text-center">
                 <a href="" class="btn btn-linked" data-toggle="modal" data-target="#squarespaceModal" >
-                    <img class="pull-right" src="/media/envelope.png" width="150" alt=""></img>
+                    <img class="pull-right" src="/media/envelope.png" width="250" alt=""></img>
                 </a>
             </p>
         </div>
@@ -25,7 +25,7 @@
                 <span aria-hidden="true" id="">×</span>
                 <span class="sr-only">Close</span>
             </button>
-			<h3 class="modal-title" id="lineModalLabel">Trabajemos juntos</h3>
+			<h3 class=" text-center jumbo-text modal-title" id="lineModalLabel">Trabajemos juntos</h3>
 		</div>
         <form clas="" action="{% url 'contact' %}" method="post">
 		    <div class="modal-body">
@@ -33,21 +33,21 @@
                     {% csrf_token %}
                     <div class="row">
                         <div class="col-sm-6 form-group">
-                            <input class="form-control" id="name" name="name" placeholder="Nombre" type="text" required>
+                            <input class="form-control" id="name" name="name" placeholder="¿Cuál es su nombre?" type="text" required>
                         </div>
                         <div class="col-sm-6 form-group">
-                            <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+                            <input class="form-control" id="email" name="email" placeholder="¿Cuál es su email?" type="email" required>
                         </div>
                     </div>
-                    <textarea class="form-control" id="comments" name="comments" placeholder="Comentarios" rows="2"></textarea><br>
+                    <textarea class="form-control" id="comments" name="comments" placeholder="Déjenos un comentario" rows="3"></textarea><br>
                 </div>
                 <div class="modal-footer">
         			<div class="btn-group btn-group-justified" role="group" aria-label="group button">
         				<div class="btn-group" role="group">
-        					<button type="button" class="btn btn-default" data-dismiss="modal"  role="button">Cerrar</button>
+        					<button type="button" class="btn btn-default contact-btm" data-dismiss="modal"  role="button">Cerrar</button>
         				</div>
         				<div class="btn-group" role="group">
-        					<button type="submit" class="btn btn-default btn-hover-green" data-action="save" role="button">Enviar</button>
+        					<button type="submit" class="btn btn-default btn-hover-green contact-btm" data-action="save" role="button">Enviar</button>
         				</div>
         			</div>
         		</div>
