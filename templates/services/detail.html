@@ -27,7 +27,7 @@
 {% endblock %}
 
 {% block content %}
-<div id="image-quote" class="row gray quote hyper-padding">
+<div class="row {% if services.color %}{{services.color}}{% else %}gray{%endif%} quote hyper-padding">
     <div class="quote-text overall ">
         <h3 class="center-title hyper-text">
             {{service.title}}
@@ -49,32 +49,11 @@
     <br>
     <br>
     <div class="container">
-        <div class="">
-            <p>{{service.description|linebreaks}}</p>
+        <div class="content-markdown">
+            {{service.description}}
         </div>
     </div>
 </div>
-
-<!-- {% if sub_service %}
-<div class="row">
-    <div class="container">
-    {% for services in sub_service %}
-        <div class="col-xs-12 col-sm-4">
-            <div class="card">
-                <div class="card-title">
-                    <h3 class="center-title jumbo-text">
-                        {{services.title}}
-                    </h3>
-                    <div class="card-content content-markdown">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    {% endfor %}
-    </div>
-</div>
-{% endif%} -->
 
 {% include 'frontend/contact-form.html' %}
 {% endblock %}
