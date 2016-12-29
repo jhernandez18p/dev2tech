@@ -1,8 +1,6 @@
 from dev2tech.settings.base import *
 from decouple import config
 
-SECRET_KEY = config('SECRET_KEY')
-
 DEBUG = False
 
 # ALLOWED_HOSTS = ['*.dev2tech.xyz']
