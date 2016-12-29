@@ -1,7 +1,7 @@
 from dev2tech.settings.base import *
 from decouple import config
 
-DEBUG = False
+DEBUG = config('DEBUG')
 
 # ALLOWED_HOSTS = ['*.dev2tech.xyz']
 
