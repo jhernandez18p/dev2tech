@@ -38,6 +38,7 @@ def about_us(request):
         'value_sections': value_sections,
         'faqs':faqs,
         'template':template,
+        'url':'/conocenos/',
     }
 
     return render(request, template, context)
@@ -61,32 +62,21 @@ def contact(request):
 
 
         if name == '' or email == '' or comments == '':
-            return HttpResponseRedirect(url)
-        if service == '':
-            send_mail(
-                        'Email de contacto, página web',
-                        '%s, ha estado visitando la página web. Su email es: %s, nos ha dejado el siguiente mensaje. \n\n\n\n\n "%s"' % (name,email,comments) ,
-                        email,
-                        ['contacto@dev2tech.xyz','jhernandez.18p@dev2tech.xyz'],
-                        fail_silently=False,
-                    )
-            context = {
-                'title': 'Mensaje enviado'
-            }
-            return HttpResponseRedirect(url)
-        else:
-            send_mail(
-                        'Email de contacto, página web',
-                        '%s, ha estado visitando la página web. Su email es: %s, nos ha dejado el siguiente mensaje. \n\n\n\n\n "%s"' % (name,email,comments) ,
-                        email,
-                        ['contacto@dev2tech.xyz','jhernandez.18p@dev2tech.xyz'],
-                        fail_silently=False,
-                    )
 
-            context = {
-                'title': 'Mensaje enviado'
-            }
             return HttpResponseRedirect(url)
+
+        send_mail(
+		            'Email de contacto, página web',
+		            '%s, ha estado visitando la página web. Su email es: %s, nos ha dejado el siguiente mensaje. \n "%s" \n "%s" \n "%s" \n "%s" \n ' % (name,email,comments,service,sub_service,budget) ,
+		            email,
+		            ['contacto@dev2tech.xyz','jhernandez.18p@dev2tech.xyz'],
+		            fail_silently=False,
+		        )
+
+        context = {
+            'title': 'Mensaje enviado'
+        }
+        return HttpResponseRedirect(url)
 
 @login_required
 def done(request):
@@ -98,6 +88,7 @@ def done(request):
         'title':'¡Lo que hemos hecho!',
         'nombre':'Josmer Hernandez',
         'technologies':technologies,
+        'url':'/proyectos/',
     }
 
     return render(request, 'frontend/done.html',context)
@@ -124,6 +115,7 @@ def home(request):
         'banners':banners,
         'nombre':'Josmer Hernandez',
         'services':services,
+        'url':'/',
     }
 
     return render(request, 'frontend/index.html',context)
@@ -149,6 +141,7 @@ def services(request):
         'title':'¿Qué hacemos?',
         'nombre':'Josmer Hernandez',
         'services_section': services_section,
+        'url':'/servicios/',
     }
 
     return render(request, 'frontend/services.html',context)
@@ -160,7 +153,63 @@ def team(request):
     context = {
         'page_title': page_title,
         'title':'Dev2team',
-        'nombre':'Josmer Hernandez'
+        'nombre':'Josmer Hernandez',
+        'url':'/team/',
     }
 
     return render(request, 'frontend/team.html',context)
+
+
+"""
+    # Services
+"""
+
+def development(request):
+    """# Web development service """
+
+    template = 'services/development.html'
+    context = {
+        'title': 'development',
+        'quotation_color':'red',
+    }
+    return render(request,template,context)
+
+def email(request):
+    """# Email service"""
+
+    template = 'services/email.html'
+    context = {
+        'title': 'email',
+        'quotation_color':'red',
+    }
+    return render(request,template,context)
+
+def infra(request):
+    """# Infraestructure service"""
+
+    template = 'services/infra.html'
+    context = {
+        'title': 'infra',
+        'quotation_color':'red',
+    }
+    return render(request,template,context)
+
+def marketing(request):
+    """# Marketing service"""
+
+    template = 'services/marketing.html'
+    context = {
+        'title': 'marketing',
+        'quotation_color':'red',
+    }
+    return render(request,template,context)
+
+def storytelling(request):
+    """# Storytelling service"""
+
+    template = 'services/storytelling.html'
+    context = {
+        'title': 'storytelling',
+        'quotation_color':'red',
+    }
+    return render(request,template,context)
