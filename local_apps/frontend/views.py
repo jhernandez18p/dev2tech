@@ -91,7 +91,10 @@ def contract(request):
         comments = request.POST['comments']
         url = request.POST['url']
         service = request.POST['service']
-        sub_service = request.POST['sub_service']
+        if request.POST['sub_service']:
+            sub_service = request.POST['sub_service']
+        else:
+            sub_service = "unknown"
         budget = request.POST['budget']
 
         if name == ''or email == '' or comments == '' or service == '' or sub_service == '' or budget == '':
