@@ -55,10 +55,13 @@ def contact(request):
         name = request.POST['name']
         email = request.POST['email']
         comments = request.POST['comments']
-        service = request.POST['service']
-        sub_service = request.POST['sub_service']
-        budget = request.POST['budget']
         url = request.POST['url']
+        if request.POST['service']:
+            service = request.POST['service']
+        if request.POST['sub_service']:
+            sub_service = request.POST['sub_service']
+        if request.POST['budget']:
+            budget = request.POST['budget']
 
 
         if name == '':
