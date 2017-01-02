@@ -14,6 +14,6 @@ def service_detail(request,url_name=None):
         'page_title': page_title,
         'title':str(service.name),
         'service':service,
-        'sub_service': services,
+        'sub_services': services,
     }
     return render(request, template, context)

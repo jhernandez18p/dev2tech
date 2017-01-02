@@ -40,6 +40,7 @@ class ServiceAdmin(admin.ModelAdmin):
                 'title',
                 'sub_title',
                 'description',
+                'position',
                 'color',
                 'image',
                 'width_field',

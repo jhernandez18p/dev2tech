@@ -3,31 +3,19 @@
 
 {% block css %}
 <style media="screen">
-    .card
-    {
-        position: relative;
-        background-color: rgba(63, 63, 63, 0.15);
-        margin-top: 50px;
-        height: 300px;
-        border: 3px solid rgba(63,63,63, 0.05);
-        padding: 0;
-    }
-    .card-title
-    {
-        position: absolute;
-        background-color: rgba(63, 63, 63, 0.515);
-        margin: 0;
-        width: 100%;
-    }
-    .card-content
-    {
-        background-color: #333;
-    }
+.sub-service-container
+{
+    padding: 50px 0;
+}
+.services-container
+{
+    margin: 50px auto;
+}
 </style>
 {% endblock %}
 
 {% block content %}
-<div class="row {% if services.color %}{{services.color}}{% else %}gray{%endif%} quote hyper-padding">
+<div class="row {% if service.color %}{{service.color}}{% else %}gray{%endif%} quote hyper-padding">
     <div class="quote-text overall ">
         <h3 class="center-title hyper-text">
             {{service.title}}
@@ -43,21 +31,42 @@
     </div>
 </div>
 <div class="row">
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="container">
-        <div class="content-markdown">
-            {{service.description}}
+    <div class="container services-container">
+        <div class="col-xs-12">
+            <div class="content-markdown">
+                {{service.description|safe}}
+            </div>
         </div>
     </div>
 </div>
+{% if sub_services %}
+<div id="subServices" class="row">
+    {% for services in sub_services %}
+    <div class="container sub-service-container left">
+        <div class="col-xs-12">
+            <div class="col-sm-7">
+                <h2 class="jumbo-text">
+                    {{services.sub_title}}
+                </h2>
+                <p>{{services.description|linebreaks}}</p>
+            </div>
+            <div id="" class="col-sm-5">
+                <img class="img-responsive" src="/media/envelope.png" alt="{{services.title}}">
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
 
-{% include 'frontend/contact-form.html' %}
+
+{% include 'frontend/contract-form.html' %}
 {% endblock %}
 
 {% block js %}
-
+<script type="text/javascript">
+    $(document).ready(function (){
+        var subServices = $('#subServices')
+    });
+</script>
 {% endblock %}

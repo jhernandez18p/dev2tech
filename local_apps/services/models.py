@@ -6,6 +6,13 @@ from django.core.urlresolvers import reverse
 from local_apps.frontend.models import SiteSubCategories
 from local_apps.frontend.models import Colors as Frontend_Colors
 
+LEFT = 1
+RIGHT = 2
+CSS_POSITIONS = (
+    (LEFT, 'left'),
+    (RIGHT, 'right'),
+)
+
 class Services(models.Model):
     """# Class for services """
     name = models.CharField(max_length=144)
@@ -50,6 +57,7 @@ class Service(models.Model):
     """# Class for the services of a global service """
     title = models.CharField(max_length=144)
     sub_title = models.CharField(max_length=144, blank=True)
+    position = models.PositiveSmallIntegerField(choices=CSS_POSITIONS, null=True, blank=True)
     description = models.TextField()
     color = models.ForeignKey(
                                     Frontend_Colors,

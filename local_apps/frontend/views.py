@@ -54,32 +54,39 @@ def contact(request):
         name = request.POST['name']
         email = request.POST['email']
         comments = request.POST['comments']
+        service = request.POST['service']
+        sub_service = request.POST['sub_service']
+        budget = request.POST['budget']
+        url = request.POST['url']
 
 
-        if name == '':
+        if name == '' or email == '' or comments == '':
+            return HttpResponseRedirect(url)
+        if service == '':
+            send_mail(
+                        'Email de contacto, página web',
+                        '%s, ha estado visitando la página web. Su email es: %s, nos ha dejado el siguiente mensaje. \n\n\n\n\n "%s"' % (name,email,comments) ,
+                        email,
+                        ['contacto@dev2tech.xyz','jhernandez.18p@dev2tech.xyz'],
+                        fail_silently=False,
+                    )
+            context = {
+                'title': 'Mensaje enviado'
+            }
+            return HttpResponseRedirect(url)
+        else:
+            send_mail(
+                        'Email de contacto, página web',
+                        '%s, ha estado visitando la página web. Su email es: %s, nos ha dejado el siguiente mensaje. \n\n\n\n\n "%s"' % (name,email,comments) ,
+                        email,
+                        ['contacto@dev2tech.xyz','jhernandez.18p@dev2tech.xyz'],
+                        fail_silently=False,
+                    )
 
-            return HttpResponseRedirect('/')
-
-        elif email == '':
-
-            return HttpResponseRedirect('/')
-
-        elif comments == '':
-
-            return HttpResponseRedirect('/')
-
-        send_mail(
-		            'Email de contacto, página web',
-		            '%s, ha estado visitando la página web. Su email es: %s, nos ha dejado el siguiente mensaje. \n\n\n\n\n "%s"' % (name,email,comments) ,
-		            email,
-		            ['contacto@dev2tech.xyz','jhernandez.18p@dev2tech.xyz'],
-		            fail_silently=False,
-		        )
-
-        context = {
-            'title': 'Mensaje enviado'
-        }
-        return HttpResponseRedirect('/')
+            context = {
+                'title': 'Mensaje enviado'
+            }
+            return HttpResponseRedirect(url)
 
 @login_required
 def done(request):
@@ -157,58 +164,3 @@ def team(request):
     }
 
     return render(request, 'frontend/team.html',context)
-
-
-"""
-    # Services
-"""
-
-def development(request):
-    """# Web development service """
-
-    template = 'services/development.html'
-    context = {
-        'title': 'development',
-        'quotation_color':'red',
-    }
-    return render(request,template,context)
-
-def email(request):
-    """# Email service"""
-
-    template = 'services/email.html'
-    context = {
-        'title': 'email',
-        'quotation_color':'red',
-    }
-    return render(request,template,context)
-
-def infra(request):
-    """# Infraestructure service"""
-
-    template = 'services/infra.html'
-    context = {
-        'title': 'infra',
-        'quotation_color':'red',
-    }
-    return render(request,template,context)
-
-def marketing(request):
-    """# Marketing service"""
-
-    template = 'services/marketing.html'
-    context = {
-        'title': 'marketing',
-        'quotation_color':'red',
-    }
-    return render(request,template,context)
-
-def storytelling(request):
-    """# Storytelling service"""
-
-    template = 'services/storytelling.html'
-    context = {
-        'title': 'storytelling',
-        'quotation_color':'red',
-    }
-    return render(request,template,context)
