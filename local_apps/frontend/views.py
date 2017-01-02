@@ -61,9 +61,18 @@ def contact(request):
         url = request.POST['url']
 
 
-        if name == '' or email == '' or comments == '':
-
+        if name == '':
             return HttpResponseRedirect(url)
+        elif email == '':
+            return HttpResponseRedirect(url)
+        elif comments == '':
+            return HttpResponseRedirect(url)
+        elif service == None:
+            service = ' '
+        elif sub_service == None:
+            sub_service = ' '
+        elif budget == None:
+            budget = ' '
 
         send_mail(
 		            'Email de contacto, página web',
