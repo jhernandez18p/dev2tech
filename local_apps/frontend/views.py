@@ -56,13 +56,6 @@ def contact(request):
         email = request.POST['email']
         comments = request.POST['comments']
         url = request.POST['url']
-        if request.POST['service']:
-            service = request.POST['service']
-        if request.POST['sub_service']:
-            sub_service = request.POST['sub_service']
-        if request.POST['budget']:
-            budget = request.POST['budget']
-
 
         if name == '':
             return HttpResponseRedirect(url)
@@ -70,16 +63,43 @@ def contact(request):
             return HttpResponseRedirect(url)
         elif comments == '':
             return HttpResponseRedirect(url)
-        elif service == None:
-            service = ' '
-        elif sub_service == None:
-            sub_service = ' '
-        elif budget == None:
-            budget = ' '
 
         send_mail(
 		            'Email de contacto, página web',
-		            '%s, ha estado visitando la página web. Su email es: %s, nos ha dejado el siguiente mensaje. \n "%s" \n "%s" \n "%s" \n "%s" \n ' % (name,email,comments,service,sub_service,budget) ,
+		            '%s, ha estado visitando la página web. Su email es: %s, nos ha dejado el siguiente mensaje. \n "%s"' % (name,email,comments) ,
+		            email,
+		            ['contacto@dev2tech.xyz','jhernandez.18p@dev2tech.xyz'],
+		            fail_silently=False,
+		        )
+
+        context = {
+            'title': 'Mensaje enviado'
+        }
+        return HttpResponseRedirect(url)
+
+@login_required
+def contract(request):
+    """#Contact Forms """
+    if request.method == 'GET':
+
+        return HttpResponseRedirect('/')
+
+    elif request.method == 'POST':
+
+        name = request.POST['name']
+        email = request.POST['email']
+        comments = request.POST['comments']
+        url = request.POST['url']
+        service = request.POST['service']
+        sub_service = request.POST['sub_service']
+        budget = request.POST['budget']
+
+        if name == ''or email == '' or comments == '' or service == '' or sub_service == '' or budget == '':
+            return HttpResponseRedirect(url)
+
+        send_mail(
+		            'Email de contacto, página web',
+		            '%s, ha estado visitando la página web. Su email es: %s, nos ha dejado el siguiente mensaje. \n "%s" "%s" "%s" "%s"' % (name,email,comments,service,sub_service,budget) ,
 		            email,
 		            ['contacto@dev2tech.xyz','jhernandez.18p@dev2tech.xyz'],
 		            fail_silently=False,

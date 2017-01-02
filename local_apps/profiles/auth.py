@@ -69,7 +69,7 @@ def register(request):
 					'title':'Nombre de usuario requerido!',
 					'error':'show',
 					'email':'El campo de correo no puede estar vacio, recuerde que debe terminar en "@dev2tech.xyz"',
-					'contacto':'Por favor contactar al administrador de sistemas, hello@dev2tech.xyz'
+					'contacto':'Por favor contactar al administrador de sistemas, contacto@dev2tech.xyz'
 				}
 			})
 		if email == '':
@@ -79,7 +79,7 @@ def register(request):
 					'title':'Email requerido!',
 					'error':'show',
 					'email':'El campo de correo no puede estar vacio, recuerde que debe terminar en "@dev2tech.xyz"',
-					'contacto':'Por favor contactar al administrador de sistemas, hello@dev2tech.xyz'
+					'contacto':'Por favor contactar al administrador de sistemas, contacto@dev2tech.xyz'
 				}
 			})
 
@@ -90,7 +90,7 @@ def register(request):
 					'title':'Contraseña inconsistente',
 					'error':'show',
 					'email':'Error "%s" no es igual a "%s"' % (password1,password2),
-					'contacto':'Por favor contactar al administrador de sistemas, hello@dev2tech.xyz',
+					'contacto':'Por favor contactar al administrador de sistemas, contacto@dev2tech.xyz',
 					'input':'has-error',
 				}
 			})

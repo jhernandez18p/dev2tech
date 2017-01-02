@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^$', frontend_views.home, name="Home" ),
     url(r'^conocenos/', frontend_views.about_us, name="about" ),
     url(r'^contacto/', frontend_views.contact, name="contact" ),
+    url(r'^contratanos/', frontend_views.contract, name="contract" ),
     url(r'^proyectos/', frontend_views.done, name="done" ),
     url(r'^team/', frontend_views.team, name="team" ),
 
