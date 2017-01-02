@@ -30,15 +30,15 @@
                                 <option>{{service.name}}</option>
                             </select>
                         </div>
-                        {% if sub_services %}
-                        <div class="col-sm-6 form-group">
+
+                        <div class="col-sm-6 form-group {% if sub_services %}{% else %}hidden{% endif %}">
                             <select class="form-control" name="sub_service">
+                                <option>unknown</option>
                                 {% for services in sub_services %}
                                 <option>{{services.title}}</option>
                                 {% endfor %}
                             </select>
                         </div>
-                        {% endif %}
                     </div>
                     <div class="row">
                         <div class="col-sm-12 form-group">
