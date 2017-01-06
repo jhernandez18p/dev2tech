@@ -94,6 +94,50 @@
     </div>
 </div>
 
+{% if blackboard %}
+<div class="row jumbo-padding hidden-xs">
+    <div class="container">
+        <div class="col-sm-6">
+            <a class="link-reset" href="{{services.get_absolute_url}}">
+                <img src="http://placehold.it/600x600?text={{services.name}}">
+            </a>
+        </div>
+        <div class="col-sm-6">
+            <div class="col-sm-6">
+                <div>
+                    <img src="http://placehold.it/350x300?text=350x300">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div>
+                    <img src="http://placehold.it/350x300?text=350x300">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div>
+                    <img src="http://placehold.it/350x300?text=350x300">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div>
+                    <img src="http://placehold.it/350x300?text=350x300">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div>
+                <img src="http://placehold.it/365x600?text=365x600">
+            </div>
+        </div>
+        <div class="col-sm-8 gray">
+            <div>
+                <img src="http://placehold.it/825x600?text=825x600">
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
 {% include 'frontend/contact-form.html' %}
 
 {% endblock %}

@@ -145,6 +145,7 @@ def home(request):
     page_title = 'Home'
 
     context = {
+        'blackboard':False,
         'page_title': page_title,
         'title':'Home',
         'banners':banners,
@@ -186,6 +187,7 @@ def team(request):
     """  """
     page_title = 'team'
     context = {
+        'news':False,
         'page_title': page_title,
         'title':'Dev2team',
         'nombre':'Josmer Hernandez',
