@@ -152,9 +152,15 @@ textarea
 
 #image-quote
 {
-    background-image: url(/media/team-quote.jpeg);
+    background-image: url(/media/team-quote.png);
 }
-
+@media screen and (max-width: 736px) {
+    #image-quote
+    {
+        background-image: url(/media/team-quote-xs.png);
+        background-attachment: local;
+    }
+}
 .jumbo-padding
 {
     padding-top: 165px;
@@ -284,5 +290,5 @@ textarea
 
 pre
 {
-    display: none;   
+    display: none;
 }

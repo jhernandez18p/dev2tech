@@ -5,7 +5,14 @@
 <style media="screen">
     #image-quote
     {
-        background-image: url(/media/about-quote.jpg);
+        background-image: url(/media/about-quote.png);
+    }
+    @media screen and (max-width: 736px) {
+        #image-quote
+        {
+            background-image: url(/media/about-quote-xs.png);
+            background-attachment: local;
+        }
     }
     #text-quote-margin-top
     {

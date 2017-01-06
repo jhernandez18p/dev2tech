@@ -4,7 +4,14 @@
 <style media="screen">
     #image-quote
     {
-        background-image: url(/media/index-quote.jpg);
+        background-image: url(/media/index-quote.png);
+    }
+    @media screen and (max-width: 736px) {
+        #image-quote
+        {
+            background-image: url(/media/index-quote-xs.png);
+            background-attachment: local;
+        }
     }
     .quote-triangle.gray-footer svg *, .gray-footer.quote-triangle-bottom svg *
     {
