@@ -1,11 +1,11 @@
 from dev2tech.settings.base import *
 from decouple import config
 
-DEBUG = config('DEBUG')
+DEBUG = False
 
 # ALLOWED_HOSTS = ['*.dev2tech.xyz']
 
-# AUTH_USER_MODEL = 'local_apps.profiles.EmailBackend.EmailBackend'
+AUTH_USER_MODEL = 'local_apps.profiles.EmailBackend.EmailBackend'
 
 STATIC_URL = 'https://%s/' % config('AWS_BUCKET_URL')
 
