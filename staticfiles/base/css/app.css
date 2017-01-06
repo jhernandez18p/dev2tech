@@ -150,17 +150,6 @@ textarea
     height: 65px;
 }
 
-#image-quote
-{
-    background-image: url(/media/team-quote.png);
-}
-@media screen and (max-width: 736px) {
-    #image-quote
-    {
-        background-image: url(/media/team-quote-xs.png);
-        background-attachment: local;
-    }
-}
 .jumbo-padding
 {
     padding-top: 165px;
