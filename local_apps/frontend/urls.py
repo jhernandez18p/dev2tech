@@ -14,7 +14,7 @@ urlpatterns = [
     url(r'^contacto/', frontend_views.contact, name="contact" ),
     url(r'^contratanos/', frontend_views.contract, name="contract" ),
     url(r'^proyectos/', frontend_views.done, name="done" ),
-    url(r'^team/', frontend_views.team, name="team" ),
+    url(r'^$', frontend_views.team, name="team" ),
 
     url(r'^tds/', frontend_views.home, name="loyalty" ),
     url(r'^privacidad/', frontend_views.home, name="privacy" ),

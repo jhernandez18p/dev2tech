@@ -12,7 +12,7 @@ from local_apps.classes import helpers
 from local_apps.frontend.models import *
 from local_apps.services.models import *
 
-@login_required
+#@login_required
 def about_us(request):
     """  """
     sub_categories =SiteSubCategories.objects.all()
@@ -43,7 +43,7 @@ def about_us(request):
 
     return render(request, template, context)
 
-@login_required
+#@login_required
 def contact(request):
     """#Contact Forms """
     if request.method == 'GET':
@@ -77,7 +77,7 @@ def contact(request):
         }
         return HttpResponseRedirect(url)
 
-@login_required
+#@login_required
 def contract(request):
     """#Contact Forms """
     if request.method == 'GET':
@@ -113,7 +113,7 @@ def contract(request):
         }
         return HttpResponseRedirect(url)
 
-@login_required
+#@login_required
 def done(request):
     """  """
     technologies = Technologies.objects.all()
@@ -128,7 +128,7 @@ def done(request):
 
     return render(request, 'frontend/done.html',context)
 
-@login_required
+#@login_required
 def home(request):
     """  """
     sub_categories =SiteSubCategories.objects.all()
@@ -156,7 +156,7 @@ def home(request):
 
     return render(request, 'frontend/index.html',context)
 
-@login_required
+#@login_required
 def services(request):
     """  """
     sub_categories =SiteSubCategories.objects.all()
@@ -182,7 +182,7 @@ def services(request):
 
     return render(request, 'frontend/services.html',context)
 
-@login_required
+#@login_required
 def team(request):
     """  """
     page_title = 'team'
