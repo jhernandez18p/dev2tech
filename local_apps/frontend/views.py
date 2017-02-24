@@ -76,7 +76,7 @@ def contract(request):
         context = {
             'title': 'Mensaje enviado'
         }
-        return HttpResponseRedirect(url)
+        return HttpResponseRedirect("/")
 
 #@login_required
 def contact(request):
