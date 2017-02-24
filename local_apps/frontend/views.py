@@ -54,6 +54,7 @@ def contact(request):
 
         name = request.POST['name']
         email = request.POST['email']
+        number = request.POST['number']
         comments = request.POST['comments']
         url = request.POST['url']
 
@@ -66,7 +67,7 @@ def contact(request):
 
         send_mail(
 		            'Email de contacto, página web',
-		            '%s, ha estado visitando la página web. Su email es: %s, nos ha dejado el siguiente mensaje. \n "%s"' % (name,email,comments) ,
+		            '%s, ha estado visitando la página web. Su email es: %s, nu númer telefónico es: %s nos ha dejado el siguiente mensaje. \n "%s"' % (name,email,number,comments) ,
 		            email,
 		            ['contacto@dev2tech.xyz','jhernandez.18p@dev2tech.xyz'],
 		            fail_silently=False,
