@@ -44,7 +44,7 @@ def about_us(request):
     return render(request, template, context)
 
 #@login_required
-def contact(request):
+def contract(request):
     """#Contact Forms """
     if request.method == 'GET':
 
@@ -79,7 +79,7 @@ def contact(request):
         return HttpResponseRedirect(url)
 
 #@login_required
-def contract(request):
+def contact(request):
     """#Contact Forms """
     if request.method == 'GET':
 
