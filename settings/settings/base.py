@@ -22,14 +22,14 @@ DJANGO_APPS = [
 ]
 
 LOCAL_APPS = [
-    'local_apps.blog',
-    'local_apps.client',
-    'local_apps.dashboard',
-    'local_apps.frontend',
-    'local_apps.payment',
-    'local_apps.profiles',
-    'local_apps.services',
-    'local_apps.team',
+    # 'local_apps.blog',
+    # 'local_apps.client',
+    # 'local_apps.dashboard',
+    # 'local_apps.frontend',
+    # 'local_apps.payment',
+    # 'local_apps.profiles',
+    # 'local_apps.services',
+    # 'local_apps.team',
 ]
 
 THIRD_PARTY_APPS = []
