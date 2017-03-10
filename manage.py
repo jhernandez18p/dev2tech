@@ -7,8 +7,10 @@ DEBUG = config('DEBUG')
 if __name__ == "__main__":
     
     if str(DEBUG) == 'True':
+        print(str(DEBUG))
         os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings.settings.base")
     elif str(DEBUG) == 'False':
+        print(str(DEBUG))
         os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings.settings.production")
 
     try:
