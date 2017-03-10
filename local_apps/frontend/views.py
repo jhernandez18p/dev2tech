@@ -149,9 +149,7 @@ def home(request):
         'blackboard':False,
         'page_title': page_title,
         'title':'Home',
-        # 'banners':banners,
         'nombre':'Josmer Hernandez',
-        # 'services':services,
         'url':'/',
     }
 
