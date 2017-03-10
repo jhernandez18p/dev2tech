@@ -1,9 +1,11 @@
 from dev2tech.settings.base import *
 from decouple import config
 
-DEBUG = False
+DEBUG = config('DEBUG')
 
-# ALLOWED_HOSTS = ['*.dev2tech.xyz']
+WSGI_APPLICATION = 'dev2tech.wsgi_prod.application'
+
+ALLOWED_HOSTS = ['*.dev2tech.xyz']
 
 STATIC_URL = 'https://%s/' % config('AWS_BUCKET_URL')
 

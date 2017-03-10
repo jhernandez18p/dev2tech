@@ -1,9 +1,16 @@
 #!/usr/bin/env python
 import os
 import sys
+from decouple import config
+DEBUG = config('DEBUG')
 
 if __name__ == "__main__":
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "dev2tech.settings")
+    
+    if str(DEBUG) == 'True':
+        os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings.settings.base")
+    elif str(DEBUG) == 'False':
+        os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings.settings.production")
+
     try:
         from django.core.management import execute_from_command_line
     except ImportError:
