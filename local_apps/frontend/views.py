@@ -132,26 +132,26 @@ def done(request):
 #@login_required
 def home(request):
     """  """
-    sub_categories =SiteSubCategories.objects.all()
+    # sub_categories =SiteSubCategories.objects.all()
 
-    for sub_category in sub_categories:
-        if sub_category.sub_category == 'header':
-            header_subcat = sub_category
-        elif sub_category.sub_category == 'all services':
-            services_subcat = sub_category.id
+    # for sub_category in sub_categories:
+    #     if sub_category.sub_category == 'header':
+    #         header_subcat = sub_category
+    #     elif sub_category.sub_category == 'all services':
+    #         services_subcat = sub_category.id
 
-    banners = Banners.objects.all().filter(sub_category=header_subcat)
-    services = list(Services.objects.all().filter(sub_category=services_subcat))
-    random.shuffle(services)
+    # banners = Banners.objects.all().filter(sub_category=header_subcat)
+    # services = list(Services.objects.all().filter(sub_category=services_subcat))
+    # random.shuffle(services)
     page_title = 'Home'
 
     context = {
         'blackboard':False,
         'page_title': page_title,
         'title':'Home',
-        'banners':banners,
+        # 'banners':banners,
         'nombre':'Josmer Hernandez',
-        'services':services,
+        # 'services':services,
         'url':'/',
     }
 
