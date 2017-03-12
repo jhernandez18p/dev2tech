@@ -1,4 +1,4 @@
-from dev2tech.settings.base import *
+from settings.settings.base import *
 
 STATICFILES_DIRS = ('',)
 

@@ -3,7 +3,7 @@ from decouple import config
 
 DEBUG = config('DEBUG')
 
-WSGI_APPLICATION = 'dev2tech.wsgi_prod.application'
+WSGI_APPLICATION = 'settings.wsgi_prod.application'
 
 ALLOWED_HOSTS = ['www.dev2tech.xyz','www.dev2tech.xyz']
 
