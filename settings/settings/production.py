@@ -5,7 +5,7 @@ DEBUG = config('DEBUG')
 
 WSGI_APPLICATION = 'settings.wsgi_prod.application'
 
-ALLOWED_HOSTS = ['www.dev2tech.xyz','www.dev2tech.xyz']
+ALLOWED_HOSTS = ['dev2tech.xyz','www.dev2tech.xyz']
 
 DATABASES ={
             'default':{
