@@ -5,15 +5,7 @@ DEBUG = config('DEBUG')
 
 WSGI_APPLICATION = 'dev2tech.wsgi_prod.application'
 
-ALLOWED_HOSTS = ['*.dev2tech.xyz']
-
-STATIC_URL = 'https://%s/' % config('AWS_BUCKET_URL')
-
-STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-
-AWS_STORAGE_BUCKET_NAME = config('AWS_BUCKET_NAME')
-AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
+ALLOWED_HOSTS = ['www.dev2tech.xyz','www.dev2tech.xyz']
 
 DATABASES ={
             'default':{
