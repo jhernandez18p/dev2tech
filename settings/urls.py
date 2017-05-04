@@ -1,17 +1,29 @@
 # -*- coding: utf-8 -*-
 from django.conf import settings
-from django.conf.urls import (include, url, handler400, handler403, handler404, handler500)
+from django.conf.urls import (
+    include,
+    url,
+    handler400,
+    handler403,
+    handler404,
+    handler500
+)
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.static import serve
+from django.contrib.sitemaps.views import sitemap
 # Local Apps
-from local_apps.frontend import views as frontend_views
+from settings.settings.sitemaps import StaticViewSitemap
 from local_apps.profiles import auth as auth_views
 
 handler400 = 'local_apps.frontend.views.home'
 handler403 = 'local_apps.frontend.views.home'
 handler404 = 'local_apps.frontend.views.home'
 handler500 = 'local_apps.frontend.views.home'
+
+sitemaps = {
+    'static': StaticViewSitemap,
+}
 
 urlpatterns = [
     # frontend
@@ -23,6 +35,9 @@ urlpatterns = [
     url(r'^login/', auth_views.login, name = 'Login'),
     url(r'^logout/', auth_views.logout, name = 'Logout'),
     url(r'^register/', auth_views.login, name = 'Register'),
+    # Sitemap
+    url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps},
+        name='django.contrib.sitemaps.views.sitemap')
 ]
 if settings.DEBUG:
     urlpatterns +=[
