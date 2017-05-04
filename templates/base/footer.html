@@ -1,0 +1,119 @@
+{% load staticfiles %}
+<div class="row">
+    <div class="container">
+        <div class="col-xs-12 col-sm-4 footer-list">
+            <h4 class="footer-h4">Enlaces</h4>
+            <ul class="list">
+                {% if page_title != 'Home' %}
+                <li>
+                    <a class="footer-list-a" href="{% url 'Home' %}">Inicio</a>
+                </li>
+                {% endif %}{% if page_title != 'about' %}
+                <li>
+                    <a class="footer-list-a" href="{% url 'about' %}">Conócenos</a>
+                </li>
+                {% endif %}{% if page_title != 'services' %}
+                <li>
+                    <a class="footer-list-a" href="{% url 'services' %}">¿Qué hacemos?</a>
+                </li>
+                {% endif %}{% if page_title != 'done' %}
+                <li>
+                    <a class="footer-list-a" href="{% url 'done' %}">¡Lo que hemos hecho!</a>
+                </li>
+                {% endif %}
+                {# if page_title != 'team' #}
+                <!-- <li>
+                    <a class="footer-list-a" href="{# url 'team' #}">Dev2team</a>
+                </li> -->
+                {# endif #}
+            </ul>
+        </div>
+        {% if Top_5_Services %}
+            <div class="col-xs-12 col-sm-4 footer-list">
+                <h4 class="footer-h4">Servicios</h4>
+                <ul class="list">
+                    {% for services in Top_5_Services %}
+                    <li>
+                        <a class="footer-list-a" href="{{services.get_absolute_url}}">
+                            {{services.name}}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+        <div class="col-xs-12 col-sm-4 footer-list">
+            <h4 class="footer-h4">Interés</h4>
+            <ul class="list">
+                <li><strong>Ubícanos</strong></li>
+                <li>Panamá, PA</li>
+                <li><strong>Llámanos</strong></li>
+                <li>(+507)-6266-75-45</li>
+                <li><strong>Para información en general</strong></li>
+                <li>
+                    <a href="mailto:contacto@dev2tech.xyz?subject=Saludos desde sitio web">
+                        info@dev2tech.xyz
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-xs-12 col-sm-4 footer-list">
+            <h4 class="footer-h4">Redes Sociales</h4>
+            <ul class="social-media-list">
+                <li>
+                    <a class="footer-list-a" href="https://www.facebook.com/dev2tech" target="_blank">
+                        <img class="social-media-icon" src="/media/icons/facebook-icon.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a class="footer-list-a" href="https://www.instagram.com/dev2tech/" target="_blank">
+                        <img class="social-media-icon" src="/media/icons/instagram-icon.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a class="footer-list-a" href="https://twitter.com/@dev2tech" target="_blank">
+                        <img class="social-media-icon" src="/media/icons/twitter-icon.png" alt="">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="row darkGray footer-all-right">
+    <div class="container">
+        <div class="col-xs-12 col-sm-6 padding-15px text-center">
+            <p class="text-white">
+                All right reseved {% now "Y" %} <span class="footer-logo-text logo-font" >Dev2tech</span>
+            </p>
+        </div>
+        <div class="col-xs-12 col-sm-6 padding-15px hidden-xs">
+            <ul class="footer-nav">
+                {% if page_title != 'Home' %}
+                <li>
+                    <a href="{% url 'Home' %}">Inicio</a>
+                </li>
+                {% endif %}
+                {% if page_title != 'about' %}
+                <li>
+                    <a href="{% url 'about' %}">Conócenos</a>
+                </li>
+                {% endif %}
+                {% if page_title != 'services' %}
+                <li>
+                    <a href="{% url 'services' %}">¿Qué hacemos?</a>
+                </li>
+                {% endif %}
+                {% if page_title != 'done' %}
+                <li>
+                    <a href="{% url 'done' %}">¡Lo que hemos hecho!</a>
+                </li>
+                {% endif %}
+                {# if page_title != 'team' #}
+                <!-- <li>
+                    <a href="{# url 'team' #}">Dev2team</a>
+                </li> -->
+                {# endif #}
+            </ul>
+        </div>
+    </div>
+</div>

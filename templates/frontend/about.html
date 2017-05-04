@@ -30,9 +30,9 @@
     </div>
 </div>
 
+{% if info_sections %}
 <div class="row gray">
     <div class="container padding-50px">
-        {% if info_sections %}
             {% for info in info_sections %}
             <div class="col-xs-12 col-sm-6 index-services-container">
                 <div class="index-services panel panel-card">
@@ -46,17 +46,17 @@
                 </div>
             </div>
             {% endfor %}
-        {% endif %}
     </div>
 </div>
+{% endif %}
 
+{% if value_sections %}
 <div class="row flex-row">
     <div class="container padding-50px">
         <div class="col-xs-12">
             <h2 class="hyper-text center-title">Nuestros valores</h2>
             <br>
         </div>
-        {% if value_sections %}
             {% for values in value_sections %}
             <div class="col-xs-12 col-sm-6 col-mg-3 col-xl-3">
                 <div class="panel panel-card panel-default gray flex-col">
@@ -69,12 +69,13 @@
                 </div>
             </div>
             {% endfor %}
-        {% endif %}
     </div>
 </div>
+{% endif %}
 
 {% include 'frontend/contact-us.html' %}
 
+{% if faqs %}
 <div class="row turquesa padding-50px quote">
     <div class="hidden-xs quote-triangle white">
         <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 100 100">
@@ -88,7 +89,6 @@
     <div class="container padding-50px">
         <div class="col-xs-12 padding-50px">
             <div class="panel-group" id="accordion">
-                {% if faqs %}
                     {% for faq in faqs %}
                     <div class="panel panel-default panel-card">
                         <div class="panel-heading">
@@ -103,7 +103,6 @@
                         </div>
                     </div>
                     {% endfor %}
-                {% endif %}
             </div>
         </div>
     </div>
@@ -113,6 +112,8 @@
         </svg>
     </div>
 </div>
+{% endif %}
+
 {% endblock %}
 
 {% block js %}

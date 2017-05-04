@@ -1,0 +1,42 @@
+{% load staticfiles %}
+<div class="logo_container">
+    <span id="dev2tech-logo" class="logo logo-font">
+        Dev2tech
+    </span>
+</div>
+<div class="button_container" id="toggle">
+    <span class="top"></span>
+    <span class="middle"></span>
+    <span class="bottom"></span>
+</div>
+<div class="overlay" id="overlay">
+    <nav class="overlay-menu">
+        <ul>
+            {% if page_title != 'Home' %}
+            <li>
+                <a href="{% url 'Home' %}">Inicio</a>
+            </li>
+            {% endif %}
+            {% if page_title != 'about' %}
+            <li>
+                <a href="{% url 'about' %}">Conócenos</a>
+            </li>
+            {% endif %}
+            {% if page_title != 'services' %}
+            <li>
+                <a href="{% url 'services' %}">¿Qué hacemos?</a>
+            </li>
+            {% endif %}
+            {% if page_title != 'done' %}
+            <li>
+                <a href="{% url 'done' %}">¡Lo que hemos hecho!</a>
+            </li>
+            {% endif %}
+            {# if page_title != 'team' #}
+            <!-- <li>
+                <a href="{# url 'team' #}">Dev2team</a>
+            </li> -->
+            {# endif #}
+        </ul>
+    </nav>
+</div>

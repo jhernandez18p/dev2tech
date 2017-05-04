@@ -12,10 +12,9 @@ from local_apps.classes import helpers
 from local_apps.frontend.models import *
 from local_apps.services.models import *
 
-#@login_required
 def about_us(request):
     """  """
-    sub_categories =SiteSubCategories.objects.all()
+    sub_categories = SiteSubCategories.objects.all()
     for sub_category in sub_categories:
         if sub_category.sub_category == 'info':
             info_section_id = sub_category.id
@@ -28,11 +27,11 @@ def about_us(request):
     faqs = FAQ.objects.all()
     page_title = 'about'
     # print(info_sections[1])
-    template =  'frontend/about.html'
+    template = 'frontend/about.html'
 
     context = {
-        'page_title': page_title,
-        'title':'Conócenos',
+        #'page_title': page_title,
+        'pg_title':'Conócenos',
         'nombre':'Josmer Hernandez',
         'info_sections': info_sections,
         'value_sections': value_sections,
@@ -43,7 +42,6 @@ def about_us(request):
 
     return render(request, template, context)
 
-#@login_required
 def contract(request):
     """#Contact Forms """
     if request.method == 'GET':
@@ -66,19 +64,23 @@ def contract(request):
             return HttpResponseRedirect(url)
 
         send_mail(
-		            'Email de contacto, página web',
-		            '%s, ha estado visitando la página web. Su email es: %s, nu númer telefónico es: %s nos ha dejado el siguiente mensaje. \n "%s"' % (name,email,number,comments) ,
-		            email,
-		            ['contacto@dev2tech.xyz','jhernandez.18p@dev2tech.xyz'],
-		            fail_silently=False,
-		        )
+            'Email de contacto, página web',
+            '''
+            %s, ha estado visitando la página web.
+            Su email es: %s, nu númer telefónico es: %s
+            nos ha dejado el siguiente mensaje. \n
+             "%s"
+             ''' % (name, email, number, comments),
+            email,
+            ['contacto@dev2tech.xyz', 'jhernandez.18p@dev2tech.xyz'],
+            fail_silently=False,
+        )
 
         context = {
-            'title': 'Mensaje enviado'
+            'pg_title': 'Mensaje enviado'
         }
         return HttpResponseRedirect("/")
 
-#@login_required
 def contact(request):
     """#Contact Forms """
     if request.method == 'GET':
@@ -110,18 +112,17 @@ def contact(request):
 		        )
 
         context = {
-            'title': 'Mensaje enviado'
+            'pg_title': 'Mensaje enviado'
         }
         return HttpResponseRedirect(url)
 
-#@login_required
 def done(request):
     """  """
     technologies = Technologies.objects.all()
     page_title = 'done'
     context = {
-        'page_title': page_title,
-        'title':'¡Lo que hemos hecho!',
+        #'page_title': page_title,
+        'pg_title':'¡Lo que hemos hecho!',
         'nombre':'Josmer Hernandez',
         'technologies':technologies,
         'url':'/proyectos/',
@@ -129,9 +130,13 @@ def done(request):
 
     return render(request, 'frontend/done.html',context)
 
-#@login_required
 def home(request):
     """  """
+    template = 'frontend/index.html'
+    context = {
+        'pg_title':'Inicio',
+        'url':'/',
+    }
     # sub_categories =SiteSubCategories.objects.all()
 
     # for sub_category in sub_categories:
@@ -143,19 +148,11 @@ def home(request):
     # banners = Banners.objects.all().filter(sub_category=header_subcat)
     # services = list(Services.objects.all().filter(sub_category=services_subcat))
     # random.shuffle(services)
-    page_title = 'Home'
 
-    context = {
-        'blackboard':False,
-        'page_title': page_title,
-        'title':'Home',
-        'nombre':'Josmer Hernandez',
-        'url':'/',
-    }
 
-    return render(request, 'frontend/index.html',context)
+    return render(request, template, context)
 
-#@login_required
+
 def services(request):
     """  """
     sub_categories =SiteSubCategories.objects.all()
@@ -172,8 +169,8 @@ def services(request):
 
     page_title = 'services'
     context = {
-        'page_title': page_title,
-        'title':'¿Qué hacemos?',
+        #'page_title': page_title,
+        'pg_title':'¿Qué hacemos?',
         'nombre':'Josmer Hernandez',
         'services_section': services_section,
         'url':'/servicios/',
@@ -181,71 +178,67 @@ def services(request):
 
     return render(request, 'frontend/services.html',context)
 
-#@login_required
+
 def team(request):
     """  """
     page_title = 'team'
     context = {
         'news':False,
-        'page_title': page_title,
-        'title':'Dev2team',
+        #'page_title': page_title,
+        'pg_title':'El equipo',
         'nombre':'Josmer Hernandez',
         'url':'/team/',
     }
 
-    return render(request, 'frontend/team.html',context)
+    return render(request, 'frontend/team.html', context)
 
 
-"""
-    # Services
-"""
+# def development(request):
+#     """# Web development service """
 
-def development(request):
-    """# Web development service """
+#     template = 'services/development.html'
+#     context = {
+#         'title': 'development',
+#         'quotation_color':'red',
+#     }
+#     return render(request,template,context)
 
-    template = 'services/development.html'
-    context = {
-        'title': 'development',
-        'quotation_color':'red',
-    }
-    return render(request,template,context)
+# def email(request):
+#     """# Email service"""
 
-def email(request):
-    """# Email service"""
+#     template = 'services/email.html'
+#     context = {
+#         'title': 'email',
+#         'quotation_color':'red',
+#     }
+#     return render(request,template,context)
 
-    template = 'services/email.html'
-    context = {
-        'title': 'email',
-        'quotation_color':'red',
-    }
-    return render(request,template,context)
+# def infra(request):
+#     """# Infraestructure service"""
 
-def infra(request):
-    """# Infraestructure service"""
+#     template = 'services/infra.html'
+#     context = {
+#         'title': 'infra',
+#         'quotation_color':'red',
+#     }
+#     return render(request,template,context)
 
-    template = 'services/infra.html'
-    context = {
-        'title': 'infra',
-        'quotation_color':'red',
-    }
-    return render(request,template,context)
+# def marketing(request):
+#     """# Marketing service"""
 
-def marketing(request):
-    """# Marketing service"""
+#     template = 'services/marketing.html'
+#     context = {
+#         'title': 'marketing',
+#         'quotation_color':'red',
+#     }
+#     return render(request,template,context)
 
-    template = 'services/marketing.html'
-    context = {
-        'title': 'marketing',
-        'quotation_color':'red',
-    }
-    return render(request,template,context)
+# def storytelling(request):
+#     """# Storytelling service"""
 
-def storytelling(request):
-    """# Storytelling service"""
-
-    template = 'services/storytelling.html'
-    context = {
-        'title': 'storytelling',
-        'quotation_color':'red',
-    }
-    return render(request,template,context)
+#     template = 'services/storytelling.html'
+#     context = {
+#         'title': 'storytelling',
+#         'quotation_color':'red',
+#     }
+#     return render(request,template,context)
