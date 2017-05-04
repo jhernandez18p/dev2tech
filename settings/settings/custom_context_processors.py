@@ -6,5 +6,6 @@ def menu(request):
     """# All arround site info"""
     context = {
         'site_url': 'https://wwww.dev2tech.xyz',
+        'site_name': 'Dev2tech',
     }
     return context
