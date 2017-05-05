@@ -51,7 +51,7 @@ ROOT_URLCONF = 'settings.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.abspath(os.path.join(os.path.join(BASE_DIR,os.pardir),'templates')),],
+        'DIRS': [os.path.abspath(os.path.join(os.path.join(BASE_DIR, os.pardir), 'templates')),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -95,12 +95,12 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-""" Storages Conf           """
+# Storages Conf
 
 # DEFAULT_FILE_STORAGE = 'storages.backends.ftp.FTPStorage'
 # FTP_STORAGE_LOCATION = config("DEV2TECH_FTP_STORAGE_LOCATION",)
 
-""" Email Conf.             """
+# Email Conf.
 
 EMAIL_HOST = config("DEV2TECH_EMAIL_HOST",)
 EMAIL_PORT = config("DEV2TECH_EMAIL_PORT", cast=int)
@@ -110,13 +110,13 @@ EMAIL_USE_SSL = config("DEV2TECH_EMAIL_USE_SSL", cast=bool)
 
 """ Security Conf           """
 
-AUTHENTICATION_BACKENDS =(
-                            'django.contrib.auth.backends.ModelBackend',
-                            'local_apps.profiles.EmailBackend.EmailBackend',
-                        )
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'local_apps.profiles.EmailBackend.EmailBackend',
+)
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = 'https://dev2tech.xyz/'
+LOGOUT_REDIRECT_URL = 'https://www.dev2tech.xyz/'
 SESSION_COOKIE_AGE = 43200
 SESSION_COOKIE_NAME = 'session'
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
@@ -124,13 +124,13 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 """ Media Configuration     """
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.abspath(os.path.join(os.path.join(BASE_DIR,os.pardir),'media'))
+MEDIA_ROOT = os.path.abspath(os.path.join(os.path.join(BASE_DIR, os.pardir), 'media'))
 
 
 """ Static Files Conf       """
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-    os.path.abspath(os.path.join(os.path.join(BASE_DIR,os.pardir),'staticfiles')),
+    os.path.abspath(os.path.join(os.path.join(BASE_DIR, os.pardir), 'staticfiles'))
 )
 # STATIC_ROOT = os.path.abspath(os.path.join(os.path.join(BASE_DIR,os.pardir),'staticfiles'))

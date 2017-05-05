@@ -16,10 +16,10 @@ from django.contrib.sitemaps.views import sitemap
 from settings.settings.sitemaps import StaticViewSitemap
 from local_apps.profiles import auth as auth_views
 
-handler400 = 'local_apps.frontend.views.home'
-handler403 = 'local_apps.frontend.views.home'
-handler404 = 'local_apps.frontend.views.home'
-handler500 = 'local_apps.frontend.views.home'
+handler400 = 'local_apps.frontend.views.custom_bad_request_view'
+handler403 = 'local_apps.frontend.views.custom_permission_denied_view'
+handler404 = 'local_apps.frontend.views.custom_page_not_found_view'
+handler500 = 'local_apps.frontend.views.custom_error_view'
 
 sitemaps = {
     'static': StaticViewSitemap,

@@ -242,3 +242,41 @@ def team(request):
 #         'quotation_color':'red',
 #     }
 #     return render(request,template,context)
+
+
+def custom_bad_request_view(request):
+    """# Pass"""
+    template = 'frontend/index.html'
+    context = {
+        'pg_title':'Error 400',
+        'url':'/',
+    }
+    return render(request, template, context)
+
+def custom_permission_denied_view(request):
+    """# Pass"""
+    template = 'frontend/index.html'
+    context = {
+        'pg_title':'Error 403',
+        'url':'/',
+    }
+    return render(request, template, context)
+
+def custom_page_not_found_view(request):
+    """# Pass"""
+    template = 'frontend/index.html'
+    context = {
+        'pg_title':'Error 404',
+        'url':'/',
+    }
+    return render(request, template, context)
+
+def custom_error_view(request):
+    """# Pass"""
+    template = 'frontend/index.html'
+    context = {
+        'pg_title':'Error 500',
+        'url':'/',
+    }
+    return render(request, template, context)
+    
